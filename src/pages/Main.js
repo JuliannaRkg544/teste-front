@@ -52,17 +52,19 @@ img{
 `
 const Box = styled.div`
   border-radius: 10px;
-  width: 1100px;
+  max-width: 1100px;
   min-height: 300px;
   margin: 40px 0;
   background-color: #fff;
   padding: 0 30px;
   border: 1px solid #6a6a6a ;
+
  .inner-box{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+   
 
  }
  button{
