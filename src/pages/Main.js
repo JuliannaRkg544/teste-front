@@ -7,6 +7,7 @@ export default function Main(){
     return(
        <Style>
            <img src={logo3} />
+           <img src={logo3} />
          <Box>
             <div className="inner-box">
             <p className="title">
