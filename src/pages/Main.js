@@ -90,160 +90,36 @@ export default function Main() {
          })
    }
 
-   return (
-      <Style>
-         <Header />
-         <Banner style={{ backgroundImage: `url(${background})` }}  >
-            <img src={logo} />
-            <div className="info">
-               <p> 13ª Semana de Ciência da Computação e Tecnologia
-                  da Informação (SCTI) - UENF
-               </p>
-
-
+  function Main(){
+    return(
+       <Style>
+           <img src={logo3} />
+         <Box>
+            <div className="inner-box">
+            <p className="title">
+            13ª Semana de Ciência da Computação e Tecnologia 
+            da Informação (SCTI) - UENF
+            </p>
+            <button>Realizar Inscrição</button>
             </div>
-
-         </Banner>
-         <section>
-            <Box>
-               <div className="inner-box">
-                  <p className="title">
-                     13ª Semana de Ciência da Computação e Tecnologia
-                     da Informação (SCTI) - UENF
-                  </p>
-                  <button className="subscription" onClick={(() => subscript())} >Realizar Inscrição</button>
-               </div>
-               <p className="sub-title" >
-                  <ion-icon name="calendar-outline"></ion-icon>
-                  23/10/2023 – 28/10/2022 - 09:00 - 17:00 GMT-3
-               </p>
-               <p className="sub-title">
-                  <ion-icon name="location-outline"></ion-icon>
-                  presencial UENF - Campos - Campos dos Goytacazes - Rio de Janeiro - Brasil
-               </p>
-            </Box>
-            <Box>
-               <p className="title"> Sobre o evento    </p>
-               <p>A Semana de Ciência da Computação e Tecnologia da Informação (SCTI) é um dos eventos que compõe a Semana Acadêmica Unificada da UENF que todo ano reúne os alunos de graduação para participar de palestras e minicursos.</p>
-               <p>Em sua décima terceira edição, o evento tem como principais objetivos o aprimoramento técnico-científico dos participantes, a difusão de novas tecnologias e a aproximação dos estudantes universitários com a realidade do mercado de trabalho.</p>
-               <p> A SCTI busca também incentivar e motivar a pesquisa científica, a inovação tecnológica e o empreendedorismo na região, fortalecendo a formação dos alunos de graduação em Ciência da Computação e áreas afins, dando-lhes a oportunidade de conhecer tópicos não abordados nos cursos regulares.</p>
-
-            </Box>
-            <Box>
-               <p className="title">Cronograma </p>
-               <Cronogram>
-                  <div className="days">
-
-                     <div className="weekday">
-                        <p className="date"  >
-
-
-                           <button
-                              onClick={() => mondayBtn()}
-                              className={mondayClicked ? 'btn-active' : 'btn-inactive'} disabled={mondayClicked} >
-                              Segunda
-                           </button>
-
-
-                        </p>
-                     </div>
-
-                     <div className="weekday">
-                        <p className="date">
-
-                           <button
-                              onClick={() => tuesdayBtn()}
-                              className={tuesdayClicked ? 'btn-active' : 'btn-inactive'} disabled={tuesdayClicked} >
-                              Terça
-                           </button>
-
-
-                        </p>
-                     </div>
-
-                     <div className="weekday">
-                        <p className="date">
-
-                           <button
-                              onClick={() => wednesdayBtn()}
-                              className={wednesdayClicked ? 'btn-active' : 'btn-inactive'} disabled={wednesdayClicked} >
-                              Quarta
-                           </button>
-
-
-                        </p>
-                     </div>
-                     <div className="weekday">
-                        <p className="date">
-
-                           <button
-                              onClick={() => thursdayBtn()}
-                              className={thursdayClicked ? 'btn-active' : 'btn-inactive'} disabled={thursdayClicked} >
-                              Quinta
-                           </button>
-
-
-                        </p>
-                     </div>
-                     <div className="weekday">
-                        <p className="date">
-
-                           <button
-                              onClick={() => fridayBtn()}
-                              className={fridayClicked ? 'btn-active' : 'btn-inactive'} disabled={fridayClicked} >
-                              Sexta
-                           </button>
-
-
-                        </p>
-                     </div>
-                  </div>
-                  <div className="content" >
-
-
-
-
-                  </div>
-               </Cronogram>
-               {mondayClicked ?
-                  <DayCronogram
-                     title="monday"
-                     desc=""
-                  /> : <></>}
-               {tuesdayClicked ?
-                  <DayCronogram
-                     title="tuesday"
-                     desc=""
-                  /> : <></>}
-               {wednesdayClicked ?
-                  <DayCronogram
-                     title="wednesday"
-                     desc=""
-                  /> : <></>}
-                   {thursdayClicked ?
-                  <DayCronogram
-                     title="Quinta"
-                     desc=""
-                  /> : <></>}
-                   {fridayClicked ?
-                  <DayCronogram
-                     title="Sexta"
-                     desc=""
-                  /> : <></>}
-
-            </Box>
-            <Box>
-               <p className="title" >Palestrantes</p>
-               <p>A Semana de Ciência da Computação e Tecnologia da Informação (SCTI) é um dos eventos que compõe a Semana Acadêmica Unificada da UENF que todo ano reúne os alunos de graduação para participar de palestras e minicursos.</p>
-               <p>Em sua décima terceira edição, o evento tem como principais objetivos o aprimoramento técnico-científico dos participantes, a difusão de novas tecnologias e a aproximação dos estudantes universitários com a realidade do mercado de trabalho.</p>
-               <p> A SCTI busca também incentivar e motivar a pesquisa científica, a inovação tecnológica e o empreendedorismo na região, fortalecendo a formação dos alunos de graduação em Ciência da Computação e áreas afins, dando-lhes a oportunidade de conhecer tópicos não abordados nos cursos regulares.</p>
-            </Box>
-         </section>
-         <End >
-
-         </End>
-      </Style>
-   )
+                <p className="sub-title" >
+                 <ion-icon name="calendar-outline"></ion-icon>
+                    23/10/2023 – 28/10/2022 - 09:00 - 17:00 GMT-3
+                </p>
+                <p className="sub-title">
+                <ion-icon name="location-outline"></ion-icon>
+                presencial UENF - Campos - Campos dos Goytacazes - Rio de Janeiro - Brasil
+                </p>
+        </Box>
+        <Box>
+       <p className="title"> Sobre o evento    </p>
+       <p>A Semana de Ciência da Computação e Tecnologia da Informação (SCTI) é um dos eventos que compõe a Semana Acadêmica Unificada da UENF que todo ano reúne os alunos de graduação para participar de palestras e minicursos.</p> 
+        <p>Em sua décima terceira edição, o evento tem como principais objetivos o aprimoramento técnico-científico dos participantes, a difusão de novas tecnologias e a aproximação dos estudantes universitários com a realidade do mercado de trabalho.</p> 
+       <p> A SCTI busca também incentivar e motivar a pesquisa científica, a inovação tecnológica e o empreendedorismo na região, fortalecendo a formação dos alunos de graduação em Ciência da Computação e áreas afins, dando-lhes a oportunidade de conhecer tópicos não abordados nos cursos regulares.</p> 
+     
+        </Box>
+       </Style>
+    )
 
 }
 const Span = styled.div`
