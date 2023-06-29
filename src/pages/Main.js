@@ -75,7 +75,7 @@ export default function Main() {
   
       
    function subscript() {
-      fetch(`${process.env.REACT_APP_URL}/payment`, {
+      fetch(`${process.env.SERVER_URL}/payment`, {
          method: "POST",
          headers: {
             "Content-Type": 'application/json',
