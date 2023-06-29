@@ -25,7 +25,7 @@ export default function Header() {
 }
 
 const Top = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 60px;
   position: fixed;
   background-color: hsl(100, 100, 100, 50%);
@@ -38,11 +38,7 @@ const Top = styled.div`
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.5); /* Cor de fundo embaçada */
   backdrop-filter: blur(30px); /* Efeito de desfoque */
-  @media screen and (min-height: 960px) {
-       transition: 0.8s all ease;
-       background-color: black;
-       
-   }
+ 
 
  
   span {

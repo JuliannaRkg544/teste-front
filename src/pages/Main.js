@@ -10,6 +10,7 @@ import background from "../assets/imgs/background-image.png"
 import { useState } from "react"
 import Monday from "../components/weekdays/DayCronogram"
 import DayCronogram from "../components/weekdays/DayCronogram"
+import { useEffect } from "react"
 
 export default function Main() {
    const [mondayClicked, setMondayClicked] = useState(false)
@@ -65,8 +66,16 @@ export default function Main() {
    /*    const [mondayClicked,setMondayClicked] = useState(false)
       const [mondayClicked,setMondayClicked] = useState(false) */
 
+        useEffect(() => {
+          document.body.style.overflowX = "hidden";
+          return () => {
+            document.body.style.overflowX = "auto";
+          };
+        }, []);
+  
+      
    function subscript() {
-      fetch("http://localhost:4000/payment", {
+      fetch(`${process.env.REACT_APP_URL}/payment`, {
          method: "POST",
          headers: {
             "Content-Type": 'application/json',
@@ -435,7 +444,7 @@ const Box = styled.div`
 
 
 const End = styled.div`
-width: 100%;
+width: 100vw;
 height: 400px;
 background-color: #eee;
 
