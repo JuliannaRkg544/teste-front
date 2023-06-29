@@ -75,7 +75,7 @@ export default function Main() {
   
       
    function subscript() {
-      fetch(`${process.env.SERVER_URL}/payment`, {
+      fetch(`scti-back-teste-production.up.railway.app/payment`, {
          method: "POST",
          headers: {
             "Content-Type": 'application/json',
