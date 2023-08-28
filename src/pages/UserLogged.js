@@ -6,6 +6,13 @@ import Table from "../components/Table";
 export default function UserLogged(){
     return(<Style>
         <Header></Header>
+     
+     {/*
+     essa rota só poderá ser liberada para os users que tiveram  pagamento confirmado pela 
+     comissão.
+     Como fazer esse controle?  
+     */}
+
     
     <h1 className="title" >Área do Usuário</h1>
     <h2 className="sub-title" >Meu Cronograma</h2>

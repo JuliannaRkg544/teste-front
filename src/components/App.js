@@ -5,6 +5,10 @@ import Fail from "../pages/Fail";
 import Login from "../pages/Login";
 import UserLogged from "../pages/UserLogged";
 import Logup from "../pages/Logup"
+import CheckoutPayment from "../pages/CheckoutPayment";
+import Checkout from "../pages/Checkout";
+import LoadingPage from "../pages/LoadingPage";
+import Admin from "../pages/Admin";
 function App() {
   return (
     <BrowserRouter>
@@ -15,6 +19,10 @@ function App() {
         <Route path= "/login" element={<Login/>}/>
         <Route path="/logup" element={<Logup/>}/>
         <Route path= '/user' element={<UserLogged/>} /> 
+        <Route path="/checkout" element={<Checkout/>} />
+        <Route path="/liberar-user" element={<Admin/>} />
+        <Route path="/checkout-payment" element={<CheckoutPayment/>} />
+
       </Routes>
     </BrowserRouter>
   );

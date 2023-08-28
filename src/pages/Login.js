@@ -62,7 +62,7 @@ export default function Login() {
         /*  onChange={(e) => setPassword(e.target.value)}*/
         ></input>
         <button  >{ "Entrar"} </button>
-        <Link to={"/logup"}>
+        <Link to={"/checkout"}>
           <span>Não tem conta? Cadastre-se</span>
         </Link>
       </Rigth>

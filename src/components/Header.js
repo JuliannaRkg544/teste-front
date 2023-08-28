@@ -2,23 +2,27 @@ import styled from "styled-components";
 import { useNavigate } from "react-router";
 import logo from "../assets/imgs/Frame.svg"
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
-export default function Header() {
+export default function Header({handleScrollSobre, handleScrollCrono}) {
   const navigate = useNavigate()
+
+
   return (
+
+    
     <Top>
    
       <div className="left">
       <Link to={"/"} >  <img className="header-logo" src={logo} /></Link>
       <div className="align"> 
-           <span className="list" >Sobre</span>
-          <span className="list" >Sobre</span>
+           <span className="list" onClick={handleScrollSobre} >Sobre</span>
+          <span className="list" onClick={handleScrollCrono} >Cronograma</span>
       </div>
    
       </div>
       <div className="rigth" >
       <span className="list" onClick={()=>navigate("/login")} >Login</span>
-      <span className="rigth" onClick={()=>navigate("/logup")} >Signin</span>
       </div>
     </Top>
   );

@@ -4,10 +4,11 @@ import logo2 from "../assets/imgs/Rectangle3.png"
 import logo3 from "../assets/imgs/logo.svg"
 import axios from "axios"
 import { json } from "react-router-dom"
+import { useNavigate } from "react-router"
 import Header from "../components/Header"
 import Table from "../components/Table"
 import background from "../assets/imgs/background-image.png"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import Monday from "../components/weekdays/DayCronogram"
 import DayCronogram from "../components/weekdays/DayCronogram"
 import { useEffect } from "react"
@@ -97,12 +98,37 @@ export default function Main() {
          .catch(e => {
             console.log(e.error)
          })
+
+
    }
 
+   const navigate = useNavigate()
 
+
+   const sobreScroll = useRef(null);
+
+   const handleScrollSobre = () => {
+      const elementTop = sobreScroll.current.getBoundingClientRect().top;
+
+      window.scrollTo({
+         top: window.scrollY + elementTop - 100,
+         behavior: 'smooth',
+       });
+   };
+
+   const cronoScroll = useRef(null);
+
+   const handleScrollCrono = () => {
+      const elementTop = cronoScroll.current.getBoundingClientRect().top;
+
+      window.scrollTo({
+         top: window.scrollY + elementTop - 100,
+         behavior: 'smooth',
+       });
+   };
     return(
       <Style>
-      <Header />
+      <Header handleScrollSobre = {handleScrollSobre} handleScrollCrono={handleScrollCrono} />
       <Banner style={{ backgroundImage: `url(${background})` }}  >
          <img src={logo} />
          <div className="info">
@@ -118,7 +144,7 @@ export default function Main() {
                      13ª Semana de Ciência da Computação e Tecnologia
                      da Informação (SCTI) - UENF
                   </p>
-                  <button className="subscription" onClick={(() => subscript())} >Realizar Inscrição</button>
+                  <button className="subscription"  onClick={()=>navigate("/checkout")} >Realizar Inscrição</button>
                </div>
                <p className="sub-title" >
                   <ion-icon name="calendar-outline"></ion-icon>
@@ -130,14 +156,14 @@ export default function Main() {
                </p>
             </Box>
             <Box>
-               <p className="title"> Sobre o evento    </p>
+               <p className="title" ref={sobreScroll} > Sobre o evento    </p>
                <p>A Semana de Ciência da Computação e Tecnologia da Informação (SCTI) é um dos eventos que compõe a Semana Acadêmica Unificada da UENF que todo ano reúne os alunos de graduação para participar de palestras e minicursos.</p>
                <p>Em sua décima terceira edição, o evento tem como principais objetivos o aprimoramento técnico-científico dos participantes, a difusão de novas tecnologias e a aproximação dos estudantes universitários com a realidade do mercado de trabalho.</p>
                <p> A SCTI busca também incentivar e motivar a pesquisa científica, a inovação tecnológica e o empreendedorismo na região, fortalecendo a formação dos alunos de graduação em Ciência da Computação e áreas afins, dando-lhes a oportunidade de conhecer tópicos não abordados nos cursos regulares.</p>
 
             </Box>
             <Box>
-               <p className="title">Cronograma </p>
+               <p className="title" ref={cronoScroll} >Cronograma </p>
                <Cronogram>
                   <div className="days">
 
@@ -415,6 +441,7 @@ const Box = styled.div`
     color: #fff;
     font-family:'Roboto', sans-serif;
     box-shadow: 2px 2px 2px  #ccc;
+    cursor: pointer;
  }
  .title{
   font-size: 30px;
