@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function ParticipantsGrade({children}){
+export default function ParticipantsGrade({ children }) {
 
     return <Style>{children}</Style>;
 
@@ -30,6 +30,16 @@ font-family: 'Roboto', sans-serif;
     justify-content: center;
     font-weight: 600;
     color: #fff;
+
+}
+
+.negar{
+    background-color: #FF6347;
+    cursor: pointer;
+    justify-content: center;
+    font-weight: 600;
+    color: #fff;
+
 
 }
 

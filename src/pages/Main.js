@@ -1,6 +1,6 @@
 import styled, { ThemeProvider } from "styled-components"
 import logo from "../assets/imgs/Frame.svg"
-import logo2 from "../assets/imgs/Rectangle3.png"
+import logomini from "../assets/imgs/FrameMini.svg"
 import logo3 from "../assets/imgs/logo.svg"
 import axios from "axios"
 import { json } from "react-router-dom"
@@ -17,7 +17,7 @@ export default function Main() {
    const [mondayClicked, setMondayClicked] = useState(false)
    const [tuesdayClicked, setTuesdayClicked] = useState(false)
    const [wednesdayClicked, setWednesdayClicked] = useState(false)
-   const [thursdayClicked, setThursdayCliked] = useState(false) 
+   const [thursdayClicked, setThursdayCliked] = useState(false)
    const [fridayClicked, setFridayCliked] = useState(false)
 
 
@@ -67,14 +67,14 @@ export default function Main() {
    /*    const [mondayClicked,setMondayClicked] = useState(false)
       const [mondayClicked,setMondayClicked] = useState(false) */
 
-        useEffect(() => {
-          document.body.style.overflowX = "hidden";
-          return () => {
-            document.body.style.overflowX = "auto";
-          };
-        }, []);
-  
-      
+   useEffect(() => {
+      document.body.style.overflowX = "hidden";
+      return () => {
+         document.body.style.overflowX = "auto";
+      };
+   }, []);
+
+
    function subscript() {
       fetch(`scti-back-teste-production.up.railway.app/payment`, {
          method: "POST",
@@ -113,7 +113,7 @@ export default function Main() {
       window.scrollTo({
          top: window.scrollY + elementTop - 100,
          behavior: 'smooth',
-       });
+      });
    };
 
    const cronoScroll = useRef(null);
@@ -124,19 +124,19 @@ export default function Main() {
       window.scrollTo({
          top: window.scrollY + elementTop - 100,
          behavior: 'smooth',
-       });
+      });
    };
-    return(
+   return (
       <Style>
-      <Header handleScrollSobre = {handleScrollSobre} handleScrollCrono={handleScrollCrono} />
-      <Banner style={{ backgroundImage: `url(${background})` }}  >
-         <img src={logo} />
-         <div className="info">
-            <p> 13ª Semana de Ciência da Computação e Tecnologia
-               da Informação (SCTI) - UENF
-            </p>
+         <Header handleScrollSobre={handleScrollSobre} handleScrollCrono={handleScrollCrono} />
+         <Banner style={{ backgroundImage: `url(${background})` }}  >
+            <img id="img-main" src={logo} />
+            <div className="info">
+               <p> 13ª Semana de Ciência da Computação e Tecnologia
+                  da Informação (SCTI) - UENF
+               </p>
             </div>
-            </Banner>
+         </Banner>
          <section>
             <Box>
                <div className="inner-box">
@@ -144,7 +144,7 @@ export default function Main() {
                      13ª Semana de Ciência da Computação e Tecnologia
                      da Informação (SCTI) - UENF
                   </p>
-                  <button className="subscription"  onClick={()=>navigate("/checkout")} >Realizar Inscrição</button>
+                  <button className="subscription" onClick={() => navigate("/checkout")} >Realizar Inscrição</button>
                </div>
                <p className="sub-title" >
                   <ion-icon name="calendar-outline"></ion-icon>
@@ -253,12 +253,12 @@ export default function Main() {
                      title="wednesday"
                      desc=""
                   /> : <></>}
-                   {thursdayClicked ?
+               {thursdayClicked ?
                   <DayCronogram
                      title="Quinta"
                      desc=""
                   /> : <></>}
-                   {fridayClicked ?
+               {fridayClicked ?
                   <DayCronogram
                      title="Sexta"
                      desc=""
@@ -351,6 +351,15 @@ justify-content: center;
 align-items: center;
 background: rgb(2,0,36);
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(154,118,112,0.2) 83%, rgba(255,0,181,0.6502976190476191) 100%);flex-direction: column;
+@media screen and (max-width: 600px) {
+   #img-main{
+    display: flex;
+    align-self: center;
+    margin-left: -35px;
+    width: 350px;
+    height: 200px;
+  }
+}
 
 .info{
 p{
@@ -368,12 +377,22 @@ p{
 `
 
 const Style = styled.div`
+  section{
+   width: auto;
+  }
   display: flex;
   flex-direction: column;
- 
+   width: 100vw;
   align-items: center;
   justify-content: center;
-
+   @media screen and (max-width: 600px)  {
+      
+      .info{
+         p{
+            font-size: 20px;
+         }
+      }
+   }
 
 .center{
    background-color: #ccc;
@@ -418,9 +437,9 @@ const Box = styled.div`
 
   max-width: 1100px;
   min-height: 300px;
-  margin: 40px 0;
+  margin: 0px 0;
   background-color: #fff;
-  padding: 0 30px;
+  padding: 0 0px;
 
 
  .inner-box{

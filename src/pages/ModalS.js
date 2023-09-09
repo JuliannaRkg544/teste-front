@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 
 const numero = "5522999279652";
-  
+
 let mensagem = `Olá, gostaria de avisar que já comprei meu ingresso
 `;
 
@@ -21,7 +21,7 @@ const customStyles = {
 
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 
-export default function ModalS({enviado,setEnviado}) {
+export default function ModalS({ enviado, setEnviado }) {
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -39,14 +39,14 @@ export default function ModalS({enviado,setEnviado}) {
   }
   function montaMensagemWhatsApp() {
     console.log("hello")
-   
+
     mensagem = encodeURIComponent(mensagem);
 
     chamaNoZap()
-    
+
   }
-  function chamaNoZap(){
-    window.location.assign(`https://wa.me/${numero}?text=${mensagem}`)
+  function chamaNoZap() {
+    window.open(`https://wa.me/${numero}?text=${mensagem}`)
   }
 
   return (

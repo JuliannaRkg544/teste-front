@@ -4,25 +4,25 @@ import logo from "../assets/imgs/Frame.svg"
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 
-export default function Header({handleScrollSobre, handleScrollCrono}) {
+export default function Header({ handleScrollSobre, handleScrollCrono }) {
   const navigate = useNavigate()
 
 
   return (
 
-    
+
     <Top>
-   
+
       <div className="left">
-      <Link to={"/"} >  <img className="header-logo" src={logo} /></Link>
-      <div className="align"> 
-           <span className="list" onClick={handleScrollSobre} >Sobre</span>
+        <Link to={"/"} >  <img className="header-logo" src={logo} /></Link>
+        <div className="align">
+          <span className="list" onClick={handleScrollSobre} >Sobre</span>
           <span className="list" onClick={handleScrollCrono} >Cronograma</span>
-      </div>
-   
+        </div>
+
       </div>
       <div className="rigth" >
-      <span className="list" onClick={()=>navigate("/login")} >Login</span>
+        <span className="list" onClick={() => navigate("/login")} >Login</span>
       </div>
     </Top>
   );
@@ -42,7 +42,9 @@ const Top = styled.div`
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.5); /* Cor de fundo embaçada */
   backdrop-filter: blur(30px); /* Efeito de desfoque */
- 
+  @media screen and (max-width: 600px){
+   display: none;
+  }
 
  
   span {
