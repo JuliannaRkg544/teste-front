@@ -1,0 +1,110 @@
+import { useState } from "react";
+import Header from "../components/Header";
+import styled, { ThemeProvider } from "styled-components"
+import axios from "axios";
+
+
+export default function CadastrarEvento() {
+    const [course, setCourse] = useState("");
+    const [time, setTime] = useState("")
+    const [lecture, setLecture] = useState("")
+    const [speakerCourse, setSpeakerCourse] = useState("")
+    const [speakerLecture, setSpeakerLecture] = useState("")
+    const [timeLecture, setTimeLecture] = useState("")
+    const [timeCourse, setTimeCourse] = useState("")
+    const [qtd, setQtd] = useState(0)
+
+
+    const URL_CADASTRAR_EVENTO = "http://localhost:4000/evento-cadastar-segunda"
+
+    function submmitEvent() {
+        const body = {
+            course: course,
+            speakerCourse: speakerCourse,
+            lecture: lecture,
+            speakerLecture: speakerLecture,
+            timeLecture: timeLecture,
+            timeCourse: timeCourse,
+            qtd: parseInt(qtd)
+
+        }
+        axios.post(URL_CADASTRAR_EVENTO, body)
+            .then((res) => {
+                console.log(res.data)
+                alert("evento cadastrado")
+
+            })
+            .catch((err) => {
+                console.log(err.response)
+                alert("foi não")
+            })
+    }
+
+    return (
+        <Style>
+            <Header />
+
+            <h1>Cadastrar Evento</h1>
+            <input
+                type="text"
+                placeholder="Nome do curso"
+                value={course}
+                onChange={(e) => setCourse(e.target.value)}
+            ></input>
+            <input
+                type="text"
+                placeholder="Nome do palestrante do curso"
+                value={speakerCourse}
+                onChange={(e) => setSpeakerCourse(e.target.value)}
+            ></input>
+
+            <input
+                type="text"
+                placeholder="Nome da palestra"
+                value={lecture}
+                onChange={(e) => setLecture(e.target.value)}
+            ></input>
+            <input
+                type="text"
+                placeholder="Nome do palestrante"
+                value={speakerLecture}
+                onChange={(e) => setSpeakerLecture(e.target.value)}
+            ></input>
+            <input
+                type="text"
+                placeholder="hora da palestra"
+                value={timeLecture}
+                onChange={(e) => setTimeLecture(e.target.value)}
+            ></input>
+            <input
+                type="text"
+                placeholder="hora do minicurso"
+                value={timeCourse}
+                onChange={(e) => setTimeCourse(e.target.value)}
+            ></input>
+            <input
+                type="text"
+                placeholder="numero de vagas"
+                value={qtd}
+                onChange={(e) => setQtd(e.target.value)}
+            ></input>
+            <button onClick={() => submmitEvent()} >{"Cadastrar"} </button>
+
+        </Style>)
+}
+
+
+
+const Style = styled.div`
+section{
+    width: auto;
+}
+display: flex;
+flex-direction: column;
+width: 100vw;
+align-items: center;
+justify-content: center;
+margin-top: 80px;
+
+
+`

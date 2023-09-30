@@ -5,6 +5,7 @@ import Loading from "../components/Loading";
 import Header from "../components/Header";
 import UserContext from "../components/Context/UserContext";
 import { useContext } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function Admin() {
     const [participants, setParticipants] = useState([])
@@ -13,6 +14,17 @@ export default function Admin() {
     const URL_RELEASE_USER = "http://localhost:4000/user-release-access"
     const URL_DENY_USER = "http://localhost:4000/user-deny-access"
     const { user, setUser } = useContext(UserContext)
+    const { credential } = useParams();
+    const navigate = useNavigate()
+    const adminCredential = process.env.CREDENTIAL
+
+    function verifyCredential() {
+        if (credential !== "scti" || !credential) {
+            alert("oops, parece que vc não deveria estar aqui")
+            navigate("/")
+        }
+    }
+    verifyCredential()
 
     useEffect(() => {
         axios.get(URL_GET_ALL_USER)
@@ -29,6 +41,7 @@ export default function Admin() {
     }, [control])
 
     function releaseAccess(id) {
+
         const body = {
             id: id
         }

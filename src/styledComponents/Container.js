@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import background2 from "../assets/imgs/Fundo.png"
 
 export default function Container({ children }) {
-  return <Style>{children}</Style>;
+  return <Style  >{children}</Style>;
 }
 
 const Style = styled.div`
@@ -11,7 +12,7 @@ const Style = styled.div`
   align-items: center;
   height: 100vh;
   width: 100%;
-  background-image: url("background-image.png");
+  background-image: url({bac});
  
 
   @media screen and (max-width: 992px){

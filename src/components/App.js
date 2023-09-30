@@ -11,6 +11,9 @@ import LoadingPage from "../pages/MiniLoading";
 import Admin from "../pages/Admin";
 import { useContext, useState } from "react";
 import UserContext from "./Context/UserContext";
+import CadastrarEvento from "../pages/CadastrarEvento";
+import NovaSenha from "../pages/NovaSenha";
+import Footer from "./Footer";
 function App() {
   const [user, setUser] = useState("");
 
@@ -26,11 +29,14 @@ function App() {
           <Route path="/logup" element={<Logup />} />
           <Route path='/user' element={<UserLogged />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="/liberar-user" element={<Admin />} />
+          <Route path="/liberar-user/:credential" element={<Admin />} />
           <Route path="/checkout-payment" element={<CheckoutPayment />} />
+          <Route path="/cadastrar-evento" element={<CadastrarEvento />} />
+          <Route path="/senha" element={<NovaSenha />} />
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>
+
   );
 }
 

@@ -3,15 +3,20 @@ import { useNavigate } from "react-router";
 import logo from "../assets/imgs/Frame.svg"
 import { Link } from "react-router-dom";
 import { useRef } from "react";
+import background2 from "../assets/imgs/Fundo.png"
+
 
 export default function Header({ handleScrollSobre, handleScrollCrono }) {
   const navigate = useNavigate()
+  function logout() {
 
+    navigate("/")
+  }
 
   return (
 
 
-    <Top>
+    <Top style={{ backgroundImage: `url(${background2})` }} >
 
       <div className="left">
         <Link to={"/"} >  <img className="header-logo" src={logo} /></Link>
@@ -23,24 +28,25 @@ export default function Header({ handleScrollSobre, handleScrollCrono }) {
       </div>
       <div className="rigth" >
         <span className="list" onClick={() => navigate("/login")} >Login</span>
+        <span className="list" onClick={() => logout()} >Logout</span>
+
       </div>
     </Top>
   );
 }
 
 const Top = styled.div`
-  width: 100%;
-  height: 60px;
+  width: 100vw;
+  height: 30px;
   position: fixed;
   background-color: hsl(100, 100, 100, 50%);
-  box-shadow: 5px 5px 5px  #eee;
   z-index: 2;
   display: flex;
   top: 0;
   padding: 30px;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.5); /* Cor de fundo embaçada */
+  background-color: rgba(255, 255, 255, 0.1); /* Cor de fundo embaçada */
   backdrop-filter: blur(30px); /* Efeito de desfoque */
   @media screen and (max-width: 600px){
    display: none;
@@ -56,14 +62,19 @@ const Top = styled.div`
     cursor: pointer;
     padding: 5px;
     margin-right: 20px;
-  font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-family: 'Inconsolata', monospace;
+
   }
+
   .list{
     display: flex;
     align-self: flex-start;
+    transition: background-color 0.3s;
+
   }
   .list:hover{
-    background-color: var(--darkcolor);
+    background-color: #f0f0f0;
     transition: 0.5s;
   }
   h1 {
@@ -91,6 +102,7 @@ const Top = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
+
     }
     img{
       height: 80px;

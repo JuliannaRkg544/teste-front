@@ -8,10 +8,12 @@ import { useNavigate } from "react-router"
 import Header from "../components/Header"
 import Table from "../components/Table"
 import background from "../assets/imgs/background-image.png"
+import background2 from "../assets/imgs/Fundo.png"
 import { useRef, useState } from "react"
 import Monday from "../components/weekdays/DayCronogram"
 import DayCronogram from "../components/weekdays/DayCronogram"
 import { useEffect } from "react"
+import Footer from "../components/Footer"
 
 export default function Main() {
    const [mondayClicked, setMondayClicked] = useState(false)
@@ -76,7 +78,7 @@ export default function Main() {
 
 
    function subscript() {
-      fetch(`scti-back-teste-production.up.railway.app/payment`, {
+      fetch(`http://localhost:4000/comprar`, {
          method: "POST",
          headers: {
             "Content-Type": 'application/json',
@@ -129,11 +131,11 @@ export default function Main() {
    return (
       <Style>
          <Header handleScrollSobre={handleScrollSobre} handleScrollCrono={handleScrollCrono} />
-         <Banner style={{ backgroundImage: `url(${background})` }}  >
+         <Banner style={{ backgroundImage: `url(${background2})` }}  >
             <img id="img-main" src={logo} />
             <div className="info">
                <p> 13ª Semana de Ciência da Computação e Tecnologia
-                  da Informação (SCTI) - UENF
+                  da Informação
                </p>
             </div>
          </Banner>
@@ -148,7 +150,7 @@ export default function Main() {
                </div>
                <p className="sub-title" >
                   <ion-icon name="calendar-outline"></ion-icon>
-                  23/10/2023 – 28/10/2022 - 09:00 - 17:00 GMT-3
+                  23/10/2023 – 27/10/2022 - 09:00 - 18:00 GMT-3
                </p>
                <p className="sub-title">
                   <ion-icon name="location-outline"></ion-icon>
@@ -240,12 +242,12 @@ export default function Main() {
                </Cronogram>
                {mondayClicked ?
                   <DayCronogram
-                     title="monday"
+                     title="Monday"
                      desc=""
                   /> : <></>}
                {tuesdayClicked ?
                   <DayCronogram
-                     title="tuesday"
+                     title="Tuesday"
                      desc=""
                   /> : <></>}
                {wednesdayClicked ?
@@ -275,7 +277,9 @@ export default function Main() {
          <End >
 
          </End>
+         <Footer />
       </Style>
+
    )
 
 }
@@ -311,13 +315,19 @@ padding: 0 100px;
 .days{
     display: flex;
     flex-direction: row;
+
     
    
 }
 .weekday{
     margin-right: 10px; 
+    
+    
     button{
       display: flex;
+      color: #4f4f4f;
+      background-color: #fdfdfd;
+      transition: background-color 0.3s;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -325,12 +335,20 @@ padding: 0 100px;
       border: none;
       width: auto;
       height: 30px;
-      font-size: 20px;
+      font-size: 25px;
       border-radius: 5px;
       cursor: pointer;
+      font-family: 'Inconsolata', monospace;
+      font-weight: 500;
+
 
 }
+button:hover{
+   background-color: #f0f0f0;
+    transition: 0.5s;
 }
+}
+
 
 .btn-active{
    background-color: #eee;
@@ -363,9 +381,9 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(154,118,112,0.2) 83%,
 
 .info{
 p{
-   font-family:'Roboto', sans-serif;
+   font-family: 'Inconsolata', monospace;
       font-size: 40px;
-      color: #696969;
+      color: #fdfdfd;
       font-weight: 600;
       width: 80vw;
       display: flex;
@@ -377,6 +395,8 @@ p{
 `
 
 const Style = styled.div`
+  background-color: #fdfdfd;
+
   section{
    width: auto;
   }
@@ -438,8 +458,9 @@ const Box = styled.div`
   max-width: 1100px;
   min-height: 300px;
   margin: 0px 0;
-  background-color: #fff;
-  padding: 0 0px;
+  background-color: #fdfdfd;
+  padding-top: 50px;
+
 
 
  .inner-box{
@@ -464,19 +485,24 @@ const Box = styled.div`
  }
  .title{
   font-size: 30px;
-  font-family: 'Share Tech', sans-serif;
-  font-weight: 500;
-  color:hsl(225, 72%, 47%, 100%); }
+  font-family: 'Inconsolata', monospace;
+  font-weight: 600;
+  color:hsl(225, 72%, 47%, 100%); 
+   padding-bottom: 20px;
+}
  .sub-title{
     font-size: 22px;
-    font-family: 'Roboto', sans-serif;
-    color: #6a6a6a;
+    font-family: 'Inconsolata', monospace;
+   padding-top: 12px;
+        color: #6a6a6a;
     font-weight: 500;
     display: flex;
+    line-height: 1.0;
 
  }
  ion-icon{
    margin-top: 1px;
+   margin-right: 5px;
   
 }
 
@@ -485,6 +511,9 @@ const Box = styled.div`
     font-family: 'Open Sans', sans-serif;
     color: #232323;
     font-weight: 400;
+    display: flex;
+    line-height: 1.5;
+    ;
  }
 `
 

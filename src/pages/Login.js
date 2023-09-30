@@ -7,6 +7,9 @@ import logo from "../assets/imgs/Frame.svg"
 import UserContext from "../components/Context/UserContext";
 import Loading from "../components/Loading";
 import MiniLoading from "./MiniLoading";
+import background2 from "../assets/imgs/Fundo.png"
+import Header from "../components/Header";
+
 
 
 export default function Login() {
@@ -21,6 +24,8 @@ export default function Login() {
 
 
   const URL_LOGIN = `http://localhost:4000/login`
+
+
   const body = {
     email: email,
     password: password,
@@ -35,22 +40,23 @@ export default function Login() {
     axios
       .post(URL_LOGIN, body)
       .then((response) => {
-        const { data } = response;
-        console.log(data)
+        console.log(response.data)
         //agr seria o momento de usar o contexto
-        setUser(data[0])
+        setUser(body.email)
+        localStorage.setItem("token", response.data)
+        localStorage.setItem("email", body.email)
         navigate("/user")
       })
       .catch((err) => {
-        console.log("deu erro", err.response);
+        console.log("deu erro", err);
         alert("Houve um erro: " + err.response.data + " :/ ");
         setDisabled(false)
       });
   }
 
   return (
-    <Container>
-      <Rigth>
+    <Container  >
+      <Rigth >
         <Link to={"/"} >
           <img src={logo} />
         </Link>
@@ -67,6 +73,9 @@ export default function Login() {
         <button onClick={login}>{!disabled ? "Entrar" : <MiniLoading />} </button>
         <Link to={"/checkout"}>
           <span>Não tem conta? Cadastre-se</span>
+        </Link>
+        <Link to={"/senha"}>
+          <span>Esqueci minha senha</span>
         </Link>
       </Rigth>
     </Container>
