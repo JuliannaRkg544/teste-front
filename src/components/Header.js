@@ -49,7 +49,7 @@ const Top = styled.div`
   background-color: rgba(255, 255, 255, 0.1); /* Cor de fundo embaçada */
   backdrop-filter: blur(30px); /* Efeito de desfoque */
   @media screen and (max-width: 600px){
-   display: none;
+   
   }
 
  

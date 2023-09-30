@@ -135,7 +135,7 @@ export default function Main() {
    return (
       <Style>
          <Header handleScrollSobre={handleScrollSobre} handleScrollCrono={handleScrollCrono} />
-         <Banner style={{ backgroundImage: `url(${background2})` }}  >
+         <Banner style={{}}  >
             <img id="img-main" src={logo} />
             <div className="info">
                <p> 13ª Semana de Ciência da Computação e Tecnologia
@@ -378,16 +378,17 @@ height: 100vh;
 display: flex;
 justify-content: center;
 align-items: center;
-background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(154,118,112,0.2) 83%, rgba(255,0,181,0.6502976190476191) 100%);flex-direction: column;
+flex-direction: column;
+background-image: url(${background2});
 @media screen and (max-width: 600px) {
    #img-main{
     display: flex;
     align-self: center;
-    margin-left: -35px;
     width: 350px;
     height: 200px;
   }
+
+
 }
 
 .info{
@@ -406,16 +407,15 @@ p{
 `
 
 const Style = styled.div`
-  background-color: #fdfdfd;
 
-  section{
-   width: auto;
-  }
+ 
   display: flex;
   flex-direction: column;
-   width: 100vw;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap; 
+   background-color: #fdfdfd;
+
    @media screen and (max-width: 600px)  {
       
       .info{
@@ -568,7 +568,7 @@ const Box = styled.div`
 
 
 const End = styled.div`
-width: 100vw;
+width: 100%;
 height: 400px;
 background-color: #eee;
 
