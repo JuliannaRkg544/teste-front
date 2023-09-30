@@ -14,6 +14,10 @@ import Monday from "../components/weekdays/DayCronogram"
 import DayCronogram from "../components/weekdays/DayCronogram"
 import { useEffect } from "react"
 import Footer from "../components/Footer"
+import rodolfo from "../assets/imgs/palestrantes/rodolfo.jpg"
+import thiago from "../assets/imgs/palestrantes/thiago.jpg"
+import alfredo from "../assets/imgs/palestrantes/alfredo.jpg"
+
 
 export default function Main() {
    const [mondayClicked, setMondayClicked] = useState(false)
@@ -269,9 +273,16 @@ export default function Main() {
             </Box>
             <Box>
                <p className="title" >Palestrantes</p>
-               <p>A Semana de Ciência da Computação e Tecnologia da Informação (SCTI) é um dos eventos que compõe a Semana Acadêmica Unificada da UENF que todo ano reúne os alunos de graduação para participar de palestras e minicursos.</p>
-               <p>Em sua décima terceira edição, o evento tem como principais objetivos o aprimoramento técnico-científico dos participantes, a difusão de novas tecnologias e a aproximação dos estudantes universitários com a realidade do mercado de trabalho.</p>
-               <p> A SCTI busca também incentivar e motivar a pesquisa científica, a inovação tecnológica e o empreendedorismo na região, fortalecendo a formação dos alunos de graduação em Ciência da Computação e áreas afins, dando-lhes a oportunidade de conhecer tópicos não abordados nos cursos regulares.</p>
+               <div className="palestrantes-photos" >
+                  <div className="photo" > <img alt="alf" src={alfredo} /> <span>Afredo</span> </div>
+                  <div className="photo" > <img alt="alf" src={thiago} /> <span>Thiago do Couto</span> </div>
+                  <div className="photo" ><img alt="alf" src={rodolfo} /> <span>Rodolfo</span> </div>
+                  <div className="photo" > <img alt="alf" src={thiago} /> <span>Thiago do Couto</span> </div>
+
+
+
+               </div>
+
             </Box>
          </section>
          <End >
@@ -460,7 +471,45 @@ const Box = styled.div`
   margin: 0px 0;
   background-color: #fdfdfd;
   padding-top: 50px;
+  display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+  .palestrantes-photos{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-wrap: wrap;
+   margin-bottom: 50px;
+  .photo{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   margin: 0 50px;
 
+   
+   span{
+   font-size: 15px;
+   font-family: 'Inconsolata', monospace;
+   color: #232323;
+   font-weight: 700;
+  }
+  
+   img{
+      width: 140px;
+      margin: 10px 0px;
+      height: 140px;
+      border-radius: 50%;
+      max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+      max-height: 100%; 
+      align-self: center;
+      
+   }
+
+  }
+
+
+  }
 
 
  .inner-box{
