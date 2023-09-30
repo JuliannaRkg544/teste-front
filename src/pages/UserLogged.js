@@ -301,6 +301,7 @@ const Style = styled.div`
   margin-top: 80px;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   .title{
   font-size: 30px;
   font-family: 'Roboto', sans-serif;
