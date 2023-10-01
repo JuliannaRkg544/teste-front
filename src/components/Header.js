@@ -16,7 +16,7 @@ export default function Header({ handleScrollSobre, handleScrollCrono }) {
   return (
 
 
-    <Top style={{ backgroundImage: `url(${background2})` }} >
+    <Top>
 
       <div className="left">
         <Link to={"/"} >  <img className="header-logo" src={logo} /></Link>
@@ -37,6 +37,8 @@ export default function Header({ handleScrollSobre, handleScrollCrono }) {
 
 const Top = styled.div`
   width: 100vw;
+  background-size: cover;
+  background-image: url(${background2});
   height: 30px;
   position: fixed;
   background-color: hsl(100, 100, 100, 50%);
@@ -46,10 +48,10 @@ const Top = styled.div`
   padding: 30px;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.1); /* Cor de fundo embaçada */
-  backdrop-filter: blur(30px); /* Efeito de desfoque */
   @media screen and (max-width: 600px){
-   
+    background-image: none;
+    position: absolute;
+  
   }
 
  

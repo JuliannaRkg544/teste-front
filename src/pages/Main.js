@@ -16,6 +16,7 @@ import { useEffect } from "react"
 import Footer from "../components/Footer"
 import rodolfo from "../assets/imgs/palestrantes/rodolfo.jpg"
 import thiago from "../assets/imgs/palestrantes/thiago.jpg"
+import rogerio from "../assets/imgs/palestrantes/rogério.jpg"
 import alfredo from "../assets/imgs/palestrantes/alfredo.jpg"
 
 
@@ -154,7 +155,7 @@ export default function Main() {
                </div>
                <p className="sub-title" >
                   <ion-icon name="calendar-outline"></ion-icon>
-                  23/10/2023 – 27/10/2022 - 09:00 - 18:00 GMT-3
+                  23/10/2023 – 27/10/2023 - 09:00 - 18:00 GMT-3
                </p>
                <p className="sub-title">
                   <ion-icon name="location-outline"></ion-icon>
@@ -277,7 +278,7 @@ export default function Main() {
                   <div className="photo" > <img alt="alf" src={alfredo} /> <span>Afredo</span> </div>
                   <div className="photo" > <img alt="alf" src={thiago} /> <span>Thiago do Couto</span> </div>
                   <div className="photo" ><img alt="alf" src={rodolfo} /> <span>Rodolfo</span> </div>
-                  <div className="photo" > <img alt="alf" src={thiago} /> <span>Thiago do Couto</span> </div>
+                  <div className="photo" > <img alt="alf" src={rogerio} /> <span>Rogério Atem</span> </div>
 
 
 
@@ -286,6 +287,14 @@ export default function Main() {
             </Box>
          </section>
          <End >
+            <div className="align" >
+               <div className="end"  >
+                  <p className="title-end" >Contato</p>
+                  <span>Restou alguma dúvida? Fale com a gente</span>
+                  <span>E siga nossas redes sociais</span>
+
+               </div>
+            </div>
 
          </End>
          <Footer />
@@ -380,14 +389,17 @@ justify-content: center;
 align-items: center;
 flex-direction: column;
 background-image: url(${background2});
+background-size: cover;
+
 @media screen and (max-width: 600px) {
    #img-main{
     display: flex;
     align-self: center;
-    width: 350px;
-    height: 200px;
+    width: 450px;
+    height: 300px;
   }
 
+  background-image: none;
 
 }
 
@@ -414,6 +426,7 @@ const Style = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap; 
+  width: 100%;
    background-color: #fdfdfd;
 
    @media screen and (max-width: 600px)  {
@@ -533,14 +546,14 @@ const Box = styled.div`
     cursor: pointer;
  }
  .title{
-  font-size: 30px;
+  font-size: 33px;
   font-family: 'Inconsolata', monospace;
   font-weight: 600;
   color:hsl(225, 72%, 47%, 100%); 
    padding-bottom: 20px;
 }
  .sub-title{
-    font-size: 22px;
+    font-size: 25px;
     font-family: 'Inconsolata', monospace;
    padding-top: 12px;
         color: #6a6a6a;
@@ -556,7 +569,7 @@ const Box = styled.div`
 }
 
  p{
-    font-size: 18px;
+    font-size: 17px;
     font-family: 'Open Sans', sans-serif;
     color: #232323;
     font-weight: 400;
@@ -568,9 +581,28 @@ const Box = styled.div`
 
 
 const End = styled.div`
-width: 100%;
+.align{
+   width: 100%;
+   max-width: 1100px;
+  margin: 0px 0;
+  padding-top: 50px;
+ 
+}
+width: 100vw;
 height: 400px;
 background-color: #eee;
+display: flex;
+align-items: center;
+   flex-direction: column;
+   flex-wrap: wrap;
+
+.title-end{
+  font-size: 33px;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 600;
+  color:hsl(225, 72%, 47%, 100%); 
+   padding-bottom: 20px;
+}
 
 
 `
