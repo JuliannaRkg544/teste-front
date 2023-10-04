@@ -31,7 +31,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/liberar-user/:credential" element={<Admin />} />
           <Route path="/checkout-payment" element={<CheckoutPayment />} />
-          <Route path="/cadastrar-evento" element={<CadastrarEvento />} />
+          <Route path="/cadastrar-evento/:credential" element={<CadastrarEvento />} />
           <Route path="/senha" element={<NovaSenha />} />
         </Routes>
       </BrowserRouter>

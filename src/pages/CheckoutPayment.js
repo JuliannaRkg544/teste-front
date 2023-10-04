@@ -8,6 +8,8 @@ import styled from "styled-components";
 import Loading from "../components/Loading";
 import LoadingPage from "./MiniLoading";
 import ModalS from "./ModalS";
+import pix from "../assets/imgs/pix.jpeg"
+
 
 
 export default function CheckoutPayment() {
@@ -39,7 +41,7 @@ export default function CheckoutPayment() {
             </label>
             <br />
             {pagamento === 'pix' ?
-              <p>pixzinho</p>
+              <img src={pix} />
 
               : <></>}
             <label>
@@ -73,6 +75,10 @@ export default function CheckoutPayment() {
 const Pagamaneto = styled.div`
 form{
     font-family:'Roboto', sans-serif;
+}
+img{
+  width: 200px;
+  height: 200px;
 }
 p{
     color: #696969;

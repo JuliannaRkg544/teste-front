@@ -6,7 +6,7 @@ import { useRef } from "react";
 import background2 from "../assets/imgs/Fundo.png"
 
 
-export default function Header({ handleScrollSobre, handleScrollCrono }) {
+export default function Header({ handleScrollSobre, handleScrollCrono, handleScrollContato, handleScrollPalestrantes }) {
   const navigate = useNavigate()
   function logout() {
 
@@ -23,6 +23,8 @@ export default function Header({ handleScrollSobre, handleScrollCrono }) {
         <div className="align">
           <span className="list" onClick={handleScrollSobre} >Sobre</span>
           <span className="list" onClick={handleScrollCrono} >Cronograma</span>
+          <span className="list" onClick={handleScrollPalestrantes}>Palestrantes</span>
+          <span className="list" onClick={handleScrollContato}>Contato</span>
         </div>
 
       </div>

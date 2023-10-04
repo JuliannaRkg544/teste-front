@@ -133,9 +133,38 @@ export default function Main() {
          behavior: 'smooth',
       });
    };
+
+   const palestrantesScroll = useRef(null);
+
+   const handleScrollPalestrantes = () => {
+      const elementTop = palestrantesScroll.current.getBoundingClientRect().top;
+
+      window.scrollTo({
+         top: window.scrollY + elementTop - 100,
+         behavior: 'smooth',
+      });
+   };
+
+   const contatoScroll = useRef(null);
+
+   const handleScrollContato = () => {
+      const elementTop = contatoScroll.current.getBoundingClientRect().top;
+
+      window.scrollTo({
+         top: window.scrollY + elementTop - 100,
+         behavior: 'smooth',
+      });
+   };
+
+
    return (
       <Style>
-         <Header handleScrollSobre={handleScrollSobre} handleScrollCrono={handleScrollCrono} />
+         <Header
+            handleScrollSobre={handleScrollSobre}
+            handleScrollCrono={handleScrollCrono}
+            handleScrollContato={handleScrollContato}
+            handleScrollPalestrantes={handleScrollPalestrantes}
+         />
          <Banner style={{}}  >
             <img id="img-main" src={logo} />
             <div className="info">
@@ -178,11 +207,11 @@ export default function Main() {
                         <p className="date"  >
 
 
-                           <button
+                           <Span
                               onClick={() => mondayBtn()}
                               className={mondayClicked ? 'btn-active' : 'btn-inactive'} disabled={mondayClicked} >
                               Segunda
-                           </button>
+                           </Span>
 
 
                         </p>
@@ -191,11 +220,11 @@ export default function Main() {
                      <div className="weekday">
                         <p className="date">
 
-                           <button
+                           <Span
                               onClick={() => tuesdayBtn()}
                               className={tuesdayClicked ? 'btn-active' : 'btn-inactive'} disabled={tuesdayClicked} >
                               Terça
-                           </button>
+                           </Span>
 
 
                         </p>
@@ -204,11 +233,11 @@ export default function Main() {
                      <div className="weekday">
                         <p className="date">
 
-                           <button
+                           <Span
                               onClick={() => wednesdayBtn()}
                               className={wednesdayClicked ? 'btn-active' : 'btn-inactive'} disabled={wednesdayClicked} >
                               Quarta
-                           </button>
+                           </Span>
 
 
                         </p>
@@ -216,11 +245,11 @@ export default function Main() {
                      <div className="weekday">
                         <p className="date">
 
-                           <button
+                           <Span
                               onClick={() => thursdayBtn()}
                               className={thursdayClicked ? 'btn-active' : 'btn-inactive'} disabled={thursdayClicked} >
                               Quinta
-                           </button>
+                           </Span>
 
 
                         </p>
@@ -228,11 +257,11 @@ export default function Main() {
                      <div className="weekday">
                         <p className="date">
 
-                           <button
+                           <Span
                               onClick={() => fridayBtn()}
                               className={fridayClicked ? 'btn-active' : 'btn-inactive'} disabled={fridayClicked} >
                               Sexta
-                           </button>
+                           </Span>
 
 
                         </p>
@@ -273,7 +302,7 @@ export default function Main() {
 
             </Box>
             <Box>
-               <p className="title" >Palestrantes</p>
+               <p className="title" ref={palestrantesScroll} >Palestrantes</p>
                <div className="palestrantes-photos" >
                   <div className="photo" > <img alt="alf" src={alfredo} /> <span>Afredo</span> </div>
                   <div className="photo" > <img alt="alf" src={thiago} /> <span>Thiago do Couto</span> </div>
@@ -289,10 +318,13 @@ export default function Main() {
          <End >
             <div className="align" >
                <div className="end"  >
-                  <p className="title-end" >Contato</p>
+                  <p className="title-end" ref={contatoScroll} >Contato</p>
                   <span>Restou alguma dúvida? Fale com a gente</span>
-                  <span>E siga nossas redes sociais</span>
-
+                  <span> E siga nossas redes sociais</span>
+                  <p className="contato-info" ><ion-icon name="logo-whatsapp"></ion-icon> 22 99927-9652 </p>
+                  <p className="contato-info" ><ion-icon name="logo-whatsapp"></ion-icon> 22 99927-9652 </p>
+                  <p className="contato-info" > <ion-icon name="logo-instagram"></ion-icon> </p>
+                  <p className="contato-info" ><ion-icon name="mail-outline"></ion-icon>  </p>
                </div>
             </div>
 
@@ -306,12 +338,24 @@ export default function Main() {
 const Span = styled.div`
 color: ${props => props.theme.dfColor};
 background-color: ${props => props.theme.dfBack};
+
+
 display: flex;
-justify-content: center;
-align-items: center;
-width: auto;
-height: 28px;
-padding: 8px;
+      color: #4f4f4f;
+      background-color: #fdfdfd;
+      transition: background-color 0.3s;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      border: none;
+      width: auto;
+      height: 30px;
+      font-size: 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Inconsolata', monospace;
+      font-weight: 500;
 
 
     
@@ -406,7 +450,7 @@ background-size: cover;
 .info{
 p{
    font-family: 'Inconsolata', monospace;
-      font-size: 40px;
+      font-size: 45px;
       color: #fdfdfd;
       font-weight: 600;
       width: 80vw;
@@ -485,6 +529,8 @@ const Box = styled.div`
   background-color: #fdfdfd;
   padding-top: 50px;
   display: flex;
+  line-height: 1.8;
+
    flex-direction: column;
    flex-wrap: wrap;
   .palestrantes-photos{
@@ -546,14 +592,14 @@ const Box = styled.div`
     cursor: pointer;
  }
  .title{
-  font-size: 33px;
+  font-size: 34px;
   font-family: 'Inconsolata', monospace;
   font-weight: 600;
   color:hsl(225, 72%, 47%, 100%); 
    padding-bottom: 20px;
 }
  .sub-title{
-    font-size: 25px;
+    font-size: 28px;
     font-family: 'Inconsolata', monospace;
    padding-top: 12px;
         color: #6a6a6a;
@@ -569,12 +615,12 @@ const Box = styled.div`
 }
 
  p{
-    font-size: 17px;
+    font-size: 18px;
     font-family: 'Open Sans', sans-serif;
     color: #232323;
     font-weight: 400;
     display: flex;
-    line-height: 1.5;
+    line-height: 1.8;
     ;
  }
 `
@@ -596,12 +642,32 @@ align-items: center;
    flex-direction: column;
    flex-wrap: wrap;
 
+   .end{
+      span{
+      font-family:'Roboto', sans-serif;
+      color: #232323;
+      font-size: 18px;
+
+   }
+   }
+
+   .contato-info{
+      font-family:'Roboto', sans-serif;
+      font-size: 18px;
+
+      margin: 20px;
+   }
 .title-end{
-  font-size: 33px;
+  font-size: 35px;
   font-family: 'Inconsolata', monospace;
   font-weight: 600;
   color:hsl(225, 72%, 47%, 100%); 
    padding-bottom: 20px;
+  
+}
+ion-icon{
+   margin-top: 1px;
+   margin-right: 5px;
 }
 
 

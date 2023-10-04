@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "../components/Header";
 import styled, { ThemeProvider } from "styled-components"
 import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
 
 
 export default function CadastrarEvento() {
@@ -13,10 +14,17 @@ export default function CadastrarEvento() {
     const [timeLecture, setTimeLecture] = useState("")
     const [timeCourse, setTimeCourse] = useState("")
     const [qtd, setQtd] = useState(0)
+    const { credential } = useParams()
+    const navigate = useNavigate()
 
 
     const URL_CADASTRAR_EVENTO = "http://localhost:4000/evento-cadastar-segunda"
-
+    function verifyCredential() {
+        if (credential !== "scti" || !credential) {
+            alert("oops, parece que vc não deveria estar aqui")
+            navigate("/")
+        }
+    }
     function submmitEvent() {
         const body = {
             course: course,
