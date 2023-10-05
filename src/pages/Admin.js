@@ -10,9 +10,9 @@ import { useNavigate, useParams } from "react-router-dom";
 export default function Admin() {
     const [participants, setParticipants] = useState([])
     const [control, setControl] = useState(false)
-    const URL_GET_ALL_USER = "http://localhost:4000/user-all"
-    const URL_RELEASE_USER = "http://localhost:4000/user-release-access"
-    const URL_DENY_USER = "http://localhost:4000/user-deny-access"
+    const URL_GET_ALL_USER = "scti-back-teste-production.up.railway.app/user-all"
+    const URL_RELEASE_USER = "scti-back-teste-production.up.railway.app/user-release-access"
+    const URL_DENY_USER = "scti-back-teste-production.up.railway.app/user-deny-access"
     const { user, setUser } = useContext(UserContext)
     const { credential } = useParams();
     const navigate = useNavigate()

@@ -17,7 +17,7 @@ export default function NovaSenha() {
 
 
 
-    const URL = `${process.env.REACT_APP_URL_LOCAL}/trocar-senha`
+    const URL = `${process.env.REACT_APP_URL}/trocar-senha`
     const body = {
         email: email,
         newPass: password,
