@@ -23,7 +23,7 @@ export default function Login() {
 
 
 
-  const URL_LOGIN = `scti-back-teste-production.up.railway.app/login`
+  const URL_LOGIN = `scti-back-teste-production-3e0d.up.railway.app/login`
 
 
   const body = {
