@@ -15,7 +15,7 @@ export default function UserLogged() {
    const [wednesdayClicked, setWednesdayClicked] = useState(false)
    const [thursdayClicked, setThursdayCliked] = useState(false)
    const [fridayClicked, setFridayCliked] = useState(false)
-   const URL_GET_EVENTOS = "http://localhost:4000/events-get-segunda"
+   const URL_GET_EVENTOS = "https://scti-back-teste-production-3e0d.up.railway.app/events-get-segunda"
    const [segunda, setSegunda] = useState([])
    const [participantInfo, setParticipantInfo] = useState([])
    const [isClicked, setIsClicked] = useState(false);
