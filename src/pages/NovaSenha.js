@@ -17,7 +17,7 @@ export default function NovaSenha() {
 
 
 
-    const URL = `${process.env.REACT_APP_URL}/trocar-senha`
+    const URL = `https://scti-back-teste-production-3e0d.up.railway.app/trocar-senha`
     const body = {
         email: email,
         newPass: password,

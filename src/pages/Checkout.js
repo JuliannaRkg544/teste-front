@@ -16,7 +16,7 @@ export default function Checkout() {
   const [disabled, setDisabled] = useState(false)
 
 
-  const URL_SIGNUP = `${process.env.REACT_APP_URL}/signup`
+  const URL_SIGNUP = `https://scti-back-teste-production-3e0d.up.railway.app/signup`
   const body = {
     name: name,
     email: email,

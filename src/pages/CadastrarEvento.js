@@ -18,7 +18,7 @@ export default function CadastrarEvento() {
     const navigate = useNavigate()
 
 
-    const URL_CADASTRAR_EVENTO = "http://localhost:4000/evento-cadastar-segunda"
+    const URL_CADASTRAR_EVENTO = "https://scti-back-teste-production-3e0d.up.railway.app/evento-cadastar-segunda"
     function verifyCredential() {
         if (credential !== "scti" || !credential) {
             alert("oops, parece que vc não deveria estar aqui")
