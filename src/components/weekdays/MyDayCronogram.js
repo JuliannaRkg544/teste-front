@@ -5,13 +5,13 @@ import UserContext from "../Context/UserContext";
 import LabelOpt from "../LabelOpt";
 
 export default function DayCronogram({ title, participantInfo, setParticipantInfo, segunda, isClicked, setIsClicked, myMondayEvents, setMyMondayEvents }) {
-    const URL_PUT_EVENTOS = "http://localhost:4000/events-alter-segunda"
+    const URL_PUT_EVENTOS = "https://scti-back-teste-production-3e0d.up.railway.app/events-alter-segunda"
     const token = localStorage.getItem("token")
     const email = localStorage.getItem("email")
     const { user, setUser } = useContext(UserContext)
 
     let cont = 0;
-    const URL_GET_PARTICIPANT = `http://localhost:4000/get-one-participant/${email}`
+    const URL_GET_PARTICIPANT = `https://scti-back-teste-production-3e0d.up.railway.app/get-one-participant/${email}`
 
 
     useEffect(() => {
@@ -26,7 +26,7 @@ export default function DayCronogram({ title, participantInfo, setParticipantInf
     }, [])
 
     function getParticipantEventInfo(idMonday) {
-        const URL_GET_MY_EVENTS = `http://localhost:4000/events-get-segunda-user/${idMonday}`
+        const URL_GET_MY_EVENTS = `https://scti-back-teste-production-3e0d.up.railway.app/events-get-segunda-user/${idMonday}`
         console.log(idMonday)
         axios
             .get(URL_GET_MY_EVENTS)
