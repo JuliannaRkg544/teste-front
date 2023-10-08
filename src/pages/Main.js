@@ -18,6 +18,8 @@ import rodolfo from "../assets/imgs/palestrantes/rodolfo.jpg"
 import thiago from "../assets/imgs/palestrantes/thiago.jpg"
 import rogerio from "../assets/imgs/palestrantes/rogério.jpg"
 import alfredo from "../assets/imgs/palestrantes/alfredo.jpg"
+import jocimar from "../assets/imgs/palestrantes/jocimar.jpg"
+
 
 
 export default function Main() {
@@ -304,10 +306,12 @@ export default function Main() {
             <Box>
                <p className="title" ref={palestrantesScroll} >Palestrantes</p>
                <div className="palestrantes-photos" >
-                  <div className="photo" > <img alt="alf" src={alfredo} /> <span>Afredo</span> </div>
+                  <div className="photo" > <img alt="alf" src={alfredo} /> <span>Alfredo</span> </div>
                   <div className="photo" > <img alt="alf" src={thiago} /> <span>Thiago do Couto</span> </div>
                   <div className="photo" ><img alt="alf" src={rodolfo} /> <span>Rodolfo</span> </div>
                   <div className="photo" > <img alt="alf" src={rogerio} /> <span>Rogério Atem</span> </div>
+                  <div className="photo" > <img alt="alf" src={jocimar} /> <span>Jocimar</span> </div>
+
 
 
 
@@ -323,8 +327,8 @@ export default function Main() {
                   <span> E siga nossas redes sociais</span>
                   <p className="contato-info" ><ion-icon name="logo-whatsapp"></ion-icon> 22 99927-9652 </p>
                   <p className="contato-info" ><ion-icon name="logo-whatsapp"></ion-icon> 22 99927-9652 </p>
-                  <p className="contato-info" > <ion-icon name="logo-instagram"></ion-icon> </p>
-                  <p className="contato-info" ><ion-icon name="mail-outline"></ion-icon>  </p>
+                  <p className="contato-info" > <ion-icon name="logo-instagram"></ion-icon>https://www.instagram.com/sctiuenf/ </p>
+                  <p className="contato-info" ><ion-icon name="mail-outline"></ion-icon> sctiuenf@gmail.com</p>
                </div>
             </div>
 
@@ -654,8 +658,13 @@ align-items: center;
    .contato-info{
       font-family:'Roboto', sans-serif;
       font-size: 18px;
-
       margin: 20px;
+      justify-content: center;
+      align-items: center;
+      ion-icon{
+       margin-top: 5px;
+       margin-right: 5px;
+}
    }
 .title-end{
   font-size: 35px;
@@ -665,10 +674,7 @@ align-items: center;
    padding-bottom: 20px;
   
 }
-ion-icon{
-   margin-top: 1px;
-   margin-right: 5px;
-}
+
 
 
 `
