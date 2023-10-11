@@ -4,8 +4,11 @@ import styled from "styled-components"
 import UserContext from "../Context/UserContext";
 import LabelOpt from "../LabelOpt";
 
-export default function DayCronogram({ title, participantInfo, setParticipantInfo, segunda, isClicked, setIsClicked, myMondayEvents, setMyMondayEvents }) {
-    const URL_PUT_EVENTOS = "https://scti-back-teste-production-3e0d.up.railway.app/events-alter-segunda"
+export default function DayCronogram({ titleDay, participantInfo, setParticipantInfo, weekday, isClicked, setIsClicked, myMondayEvents, setMyMondayEvents, setMyTuesdayEvents }) {
+
+    //const URL_PUT_EVENTOS = `https://scti-back-teste-production-3e0d.up.railway.app/events-alter-${titleDay}`
+    const URL_PUT_EVENTOS = `http://localhost:4000/events-alter-${titleDay}`
+    //const URL_PUT_EVENTOS_TERCA = "https://scti-back-teste-production-3e0d.up.railway.app/events-alter-terca"
     const token = localStorage.getItem("token")
     const email = localStorage.getItem("email")
     const { user, setUser } = useContext(UserContext)
@@ -25,16 +28,42 @@ export default function DayCronogram({ title, participantInfo, setParticipantInf
 
     }, [])
 
-    function getParticipantEventInfo(idMonday) {
-        const URL_GET_MY_EVENTS = `https://scti-back-teste-production-3e0d.up.railway.app/events-get-segunda-user/${idMonday}`
-        console.log(idMonday)
+    function getParticipantEventInfo(idDay) {
+        //const URL_GET_MY_EVENTS = `https://scti-back-teste-production-3e0d.up.railway.app/events-get-segunda-user/${idMonday}`
+        const URL_GET_MY_EVENTS = `http://localhost:4000/events-get-${titleDay}-user/${idDay}`
+        console.log("idmonday ", idDay)
         axios
             .get(URL_GET_MY_EVENTS)
             .then((res) => {
                 console.log(res.data)
-                setMyMondayEvents(res.data)
-                localStorage.setItem("my-monday-course", res.data[0].course)
-                localStorage.setItem("my-monday-courseTime", res.data[0].timeCourse)
+                if (titleDay === "segunda") {
+                    setMyMondayEvents(res.data)
+                    localStorage.setItem("my-monday-course", res.data[0].course)
+                    localStorage.setItem("my-monday-courseTime", res.data[0].timeCourse)
+                }
+                else if (titleDay === "terca") {
+                    setMyTuesdayEvents(res.data)
+                    localStorage.setItem("my-tuesday-course", res.data[0].course)
+                    localStorage.setItem("my-tuesday-courseTime", res.data[0].timeCourse)
+                }
+
+            })
+            .catch((err) => console.log(err.response))
+    }
+
+
+    function getParticipantEventInfoTerca(idTerca) {
+        //const URL_GET_MY_EVENTS_TERCA = `https://scti-back-teste-production-3e0d.up.railway.app/events-get-terca-user/${idTerca}`
+        const URL_GET_MY_EVENTS_TERCA = `http://localhost:4000/
+        events-get-terca-user/${idTerca}`
+        console.log(idTerca)
+        axios
+            .get(URL_GET_MY_EVENTS_TERCA)
+            .then((res) => {
+                console.log(res.data)
+                setMyTuesdayEvents(res.data)
+                localStorage.setItem("my-tuesday-course", res.data[0].course)
+                localStorage.setItem("my-tuesday-courseTime", res.data[0].timeCourse)
 
             })
             .catch((err) => console.log(err.response))
@@ -66,11 +95,21 @@ export default function DayCronogram({ title, participantInfo, setParticipantInf
 
 
     function setDay(id, isChecked) {
+        let idDay
+        if (titleDay === "segunda") {
+            idDay = participantInfo[0].idMonday
+
+        }
+        else if (titleDay === "terca") {
+            idDay = participantInfo[0].idtuesday
+
+        }
+        console.log("idday ", idDay)
         const body = {
             id: id,
             email: user,
             isBool: isChecked,
-            idMondayNullability: participantInfo[0].idMonday
+            idMondayNullability: idDay
 
         }
         axios.put(URL_PUT_EVENTOS, body, config)
@@ -78,6 +117,7 @@ export default function DayCronogram({ title, participantInfo, setParticipantInf
                 console.log(res.data)
                 getParticipant()
                 getParticipantEventInfo(id)
+                //getParticipantEventInfoTerca(id)
             })
             .catch((err) => {
                 console.log("deu erro", err.response);
@@ -88,7 +128,7 @@ export default function DayCronogram({ title, participantInfo, setParticipantInf
     return (
         <Style>
             <div className="evento" >
-                {segunda.map((el, index) => {
+                {weekday.map((el, index) => {
                     return (
                         <>
                             <div className="palestra" >
@@ -128,6 +168,8 @@ export default function DayCronogram({ title, participantInfo, setParticipantInf
 
 
             </div>
+
+
 
 
 

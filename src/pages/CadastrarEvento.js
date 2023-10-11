@@ -16,9 +16,10 @@ export default function CadastrarEvento() {
     const [qtd, setQtd] = useState(0)
     const { credential } = useParams()
     const navigate = useNavigate()
+    const [day, setDay] = useState("")
 
-
-    const URL_CADASTRAR_EVENTO = "https://scti-back-teste-production-3e0d.up.railway.app/evento-cadastar-segunda"
+    //const URL_CADASTRAR_EVENTO = `https://scti-back-teste-production-3e0d.up.railway.app/evento-cadastar-${day}`
+    const URL_CADASTRAR_EVENTO = `http://localhost:4000/evento-cadastar-${day}`
     function verifyCredential() {
         if (credential !== "scti" || !credential) {
             alert("oops, parece que vc não deveria estar aqui")
@@ -48,11 +49,33 @@ export default function CadastrarEvento() {
             })
     }
 
+    function handleCheckboxChange(day) {
+        console.log("day ", day)
+        console.log("url day ", URL_CADASTRAR_EVENTO)
+        setDay(day)
+
+
+    };
     return (
         <Style>
             <Header />
 
             <h1>Cadastrar Evento</h1>
+            <h1>Selecione o dia:</h1>
+            <label> segunda
+                <input
+                    type="radio"
+                    name="opt"
+                    onChange={() => handleCheckboxChange("segunda")}
+                />
+            </label>
+            <label> terça
+                <input
+                    type="radio"
+                    name="opt"
+                    onChange={() => handleCheckboxChange("terca")}
+                />
+            </label>
             <input
                 type="text"
                 placeholder="Nome do curso"

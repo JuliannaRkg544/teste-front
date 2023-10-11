@@ -10,8 +10,11 @@ import Table from "../components/Table"
 import background from "../assets/imgs/background-image.png"
 import background2 from "../assets/imgs/Fundo.png"
 import { useRef, useState } from "react"
-import Monday from "../components/weekdays/DayCronogram"
-import DayCronogram from "../components/weekdays/DayCronogram"
+import DayMonday from "../components/weekdays/DayMonday"
+import DayTuesday from "../components/weekdays/DayTuesday"
+import DayWednesday from "../components/weekdays/DayWednesday"
+import DayThursday from "../components/weekdays/DayThursday"
+import DayFriday from "../components/weekdays/DayFriday"
 import { useEffect } from "react"
 import Footer from "../components/Footer"
 import rodolfo from "../assets/imgs/palestrantes/rodolfo.jpg"
@@ -277,29 +280,74 @@ export default function Main() {
                   </div>
                </Cronogram>
                {mondayClicked ?
-                  <DayCronogram
-                     title="Monday"
-                     desc=""
+                  <DayMonday
+                     nameP={"Rodolfo"}
+                     nameC={"Rodolfo"}
+                     titleP="Da Universidade ao Sonho da Liderança no Mercado Livre: Minha Jornada no Mundo da Tecnologia"
+                     titleC=" Introdução Rápida ao Ruby e Rails API"
+                     descP="Embarque em uma viagem inspiradora através da trajetória de um profissional que transformou paixão,
+                      estratégia e determinação em uma carreira de sucesso no universo tecnológico. Nesta palestra, 
+                      você conhecerá a história por trás da criação da Soul Code, as táticas e estratégias adotadas 
+                      durante a vida universitária que foram cruciais para a formação acadêmica e os desafios
+                      enfrentados ao longo da carreira.
+                     "
+                     descC="
+                     Adentre o mundo vibrante da programação com Ruby e Rails API 
+                     neste mini curso intensivo! Projetado para aqueles que desejam 
+                     uma introdução concisa, mas abrangente, este curso cobre os fundamentos 
+                     essenciais do Ruby, uma das linguagens de programação mais amigáveis
+                      e versáteis e vamos mostrar alguns conteúdos mais avançados para 
+                      que vocês possam estudar posteriormente.
+                     "
                   /> : <></>}
                {tuesdayClicked ?
-                  <DayCronogram
-                     title="Tuesday"
-                     desc=""
+                  <DayTuesday
+                     nameP={"Luciano"}
+                     nameC={""}
+                     titleP="Tuesday"
+                     titleC=""
+                     descP=""
+                     descC=""
                   /> : <></>}
                {wednesdayClicked ?
-                  <DayCronogram
-                     title="wednesday"
-                     desc=""
+                  <DayWednesday
+                     nameP=""
+                     nameC={"Diana"}
+                     titleP="wednesday"
+                     descP=""
+                     titleC="Frameworks de UX - Diana"
+                     descC=" Frameworks ou estruturas de design de experiência ajudam a 
+                     tornar seu processo mais padronizado, descomplicado e escalável.
+                      Vamos realizar um mini projeto e aplicar esse conceito na prática.
+                     "
                   /> : <></>}
                {thursdayClicked ?
-                  <DayCronogram
-                     title="Quinta"
-                     desc=""
+                  <DayThursday
+                     nameP="Rogério Atem"
+                     nameC={""}
+                     titleP="O Polo de Inovação do EMBRAPII/IFFluminense"
+                     descP="Negociação de Projetos, Desenvolvimento do Produto Inovador e Gestão da Propriedade Intelectual na Prática
+                  Coordenador da Unidade EMBRAPII de Tecnologias para Produção Mais Limpa
+                  "
+                     titleC=""
+                     descC=""
                   /> : <></>}
                {fridayClicked ?
-                  <DayCronogram
-                     title="Sexta"
-                     desc=""
+                  <DayFriday
+                     nameP="Alfredo Junior"
+                     nameC={"Jocimar Galante"}
+                     titleP="Google Hacking
+                     "
+                     descP=" A palestra explica conceitos básicos de Internet, o que é a técnica Google Hacking
+                      e como utilizar os dorks para realizar testes de penetração. Para quem não conhece, Google Hacking é 
+                      uma das formas mais simples para testar se seu site, servidor ou plataforma possui algum vazamento
+                       de dados ou vulnerabilidade.Durante a palestra os comandos serão explicados e linhas de códigos serão organizadas 
+                       para realizar buscas específicas.
+                     "
+                     descC=" Descrição: Você já se perguntou como criar interfaces web modernas,
+                     responsivas e dinâmicas? O Angular é a resposta! Junte-se a nós neste emocionante minicurso,
+                     onde mergulharemos fundo no universo do desenvolvimento front-end com Angular, uma das estruturas 
+                     mais poderosas e amplamente adotadas para a criação de aplicativos web."
                   /> : <></>}
 
             </Box>

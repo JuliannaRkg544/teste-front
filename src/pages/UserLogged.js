@@ -16,14 +16,19 @@ export default function UserLogged() {
    const [thursdayClicked, setThursdayCliked] = useState(false)
    const [fridayClicked, setFridayCliked] = useState(false)
    const URL_GET_EVENTOS = "https://scti-back-teste-production-3e0d.up.railway.app/events-get-segunda"
+   //const URL_GET_EVENTOS_TERCA = "https://scti-back-teste-production-3e0d.up.railway.app/events-get-terca"
+   const URL_GET_EVENTOS_TERCA = "http://localhost:4000/events-get-terca"
    const [segunda, setSegunda] = useState([])
+   const [terca, setTerca] = useState([])
    const [participantInfo, setParticipantInfo] = useState([])
    const [isClicked, setIsClicked] = useState(false);
+   const [myTuesdayEvents, setMyTuesdayEvents] = useState([])
    const [myMondayEvents, setMyMondayEvents] = useState([])
    const myMondayCourseTime = localStorage.getItem("my-monday-courseTime")
    const myMondayCourse = localStorage.getItem("my-monday-course")
+   const myTuesdayCourseTime = localStorage.getItem("my-tuesday-courseTime")
+   const myTuesdayCourse = localStorage.getItem("my-tuesday-course")
 
-   let idMonday
 
    function mondayBtn() {
       setMondayClicked(true)
@@ -88,6 +93,18 @@ export default function UserLogged() {
          })
    }, [])
 
+   useEffect(() => {
+      axios.get(URL_GET_EVENTOS_TERCA)
+         .then((res) => {
+            console.log(res.data)
+            setTerca(res.data)
+
+         })
+         .catch((err) => {
+            console.log("deu erro", err.response);
+            alert("Houve um erro: " + err.response.data + " :/ ");
+         })
+   }, [])
 
    return (
       <Style  >
@@ -174,10 +191,10 @@ export default function UserLogged() {
 
          {mondayClicked ?
             <MyDayCronogram
-               title="monday"
+               titleDay="segunda"
                participantInfo={participantInfo}
                setParticipantInfo={setParticipantInfo}
-               segunda={segunda}
+               weekday={segunda}
                isClicked={isClicked}
                setIsClicked={setIsClicked}
                myMondayEvents={myMondayEvents}
@@ -185,8 +202,14 @@ export default function UserLogged() {
             /> : <></>}
          {tuesdayClicked ?
             <MyDayCronogram
-               title="tuesday"
-               desc=""
+               titleDay="terca"
+               participantInfo={participantInfo}
+               setParticipantInfo={setParticipantInfo}
+               weekday={terca}
+               isClicked={isClicked}
+               setIsClicked={setIsClicked}
+               myMondayEvents={myMondayEvents}
+               setMyTuesdayEvents={setMyTuesdayEvents}
             /> : <></>}
          {wednesdayClicked ?
             <MyDayCronogram
@@ -226,10 +249,10 @@ export default function UserLogged() {
             <div className="line" ></div>
             <div className="day-info" >
                <p>Terça  </p>
-               <span className="general-info" >{myMondayCourse}</span>
+               <span className="general-info" >{myTuesdayCourse}</span>
                <div className="align-time" >
                   <div className="time" >
-                     <span className="general-info" >{myMondayCourseTime}:00am</span>
+                     <span className="general-info" >{myTuesdayCourseTime}:00am</span>
                   </div>
                </div>
 

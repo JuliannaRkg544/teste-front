@@ -1,22 +1,25 @@
 import styled from "styled-components"
 
-export default function DayCronogram({ title, desc }) {
+export default function DayTuesday({ nameP, nameC, titleP, descP, titleC, descC }) {
     return (
         <Style>
             <div className="palestras" >
-
-
-                <p className="eve-hour">  09:00am <span className="eve-title" >{title}</span></p>
-                <div className="eve" ><p className="eve-text" > Cold bones, yeah, that's my love
-                    She hides away, like a ghost
-                    Ooh, does she know that we bleed the same?
-                    Ooh, don't wanna cry but I break that way
-                    Cold sheets, oh, where's my love?
-                    I am searching high
-                    I'm searching low in the night
+                <p className="eve-hour">  09:00am - 12:00am <span className="eve-title" >{nameC}: </span> <span className="eve-title" >{titleC}</span></p>
+                <div className="eve" ><p className="eve-text" > {descC}
                     <p className="eve-flag" >Minicurso</p>
+
                 </p> </div>
+
             </div>
+            <div className="palestras" >
+                <p className="eve-hour">  14:00pm - 16:00pm <span className="eve-title" >{nameP}: </span> <span className="eve-title" >{titleP}</span></p>
+                <div className="eve" ><p className="eve-text" > {descP}
+                    <p className="eve-flag" >Palestra</p>
+
+                </p> </div>
+
+            </div>
+
 
 
 
