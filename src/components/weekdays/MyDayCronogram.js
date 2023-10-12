@@ -7,9 +7,8 @@ import LabelOpt from "../LabelOpt";
 export default function DayCronogram({ titleDay, participantInfo, setParticipantInfo, weekday,
     isClicked, setIsClicked, setMyMondayEvents, setMyTuesdayEvents, setMyWednesdayEvents, setMyThursdayEvents, setMyFridayEvents }) {
 
-    //const URL_PUT_EVENTOS = `https://scti-back-teste-production-3e0d.up.railway.app/events-alter-${titleDay}`
-    const URL_PUT_EVENTOS = `http://localhost:4000/events-alter-${titleDay}`
-    //const URL_PUT_EVENTOS_TERCA = "https://scti-back-teste-production-3e0d.up.railway.app/events-alter-terca"
+    const URL_PUT_EVENTOS = `https://scti-back-teste-production-3e0d.up.railway.app/events-alter-${titleDay}`
+    //const URL_PUT_EVENTOS = `http://localhost:4000/events-alter-${titleDay}`
     const token = localStorage.getItem("token")
     const email = localStorage.getItem("email")
     const { user, setUser } = useContext(UserContext)
@@ -31,8 +30,8 @@ export default function DayCronogram({ titleDay, participantInfo, setParticipant
     }, [])
 
     function getParticipantEventInfo(idDay) {
-        //const URL_GET_MY_EVENTS = `https://scti-back-teste-production-3e0d.up.railway.app/events-get-segunda-user/${idMonday}`
-        const URL_GET_MY_EVENTS = `http://localhost:4000/events-get-${titleDay}-user/${idDay}`
+        const URL_GET_MY_EVENTS = `https://scti-back-teste-production-3e0d.up.railway.app/events-get-${titleDay}-user/${idDay}`
+        //const URL_GET_MY_EVENTS = `http://localhost:4000/events-get-${titleDay}-user/${idDay}`
         console.log("idmonday ", idDay)
         axios
             .get(URL_GET_MY_EVENTS)
