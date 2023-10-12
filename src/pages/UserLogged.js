@@ -297,7 +297,7 @@ export default function UserLogged() {
                titleDay="sexta"
                participantInfo={participantInfo}
                setParticipantInfo={setParticipantInfo}
-               weekday={quinta}
+               weekday={sexta}
                isClicked={isClicked}
                setIsClicked={setIsClicked}
                myMondayEvents={myMondayEvents}
