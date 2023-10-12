@@ -39,6 +39,7 @@ export default function DayCronogram({ titleDay, participantInfo, setParticipant
                 console.log(res.data)
                 if (titleDay === "segunda") {
                     setMyMondayEvents(res.data)
+                    setUser(res.data)
                     localStorage.setItem("my-monday-course", res.data[0].course)
                     localStorage.setItem("my-monday-courseTime", res.data[0].timeCourse)
                 }
@@ -123,7 +124,7 @@ export default function DayCronogram({ titleDay, participantInfo, setParticipant
             id: id,
             email: user,
             isBool: isChecked,
-            idMondayNullability: idDay
+            idNullability: idDay
 
         }
         axios.put(URL_PUT_EVENTOS, body, config)
