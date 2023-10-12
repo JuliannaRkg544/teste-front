@@ -3,7 +3,7 @@ import logo from "../assets/imgs/Frame.svg"
 import logomini from "../assets/imgs/FrameMini.svg"
 import logo3 from "../assets/imgs/logo.svg"
 import axios from "axios"
-import { json } from "react-router-dom"
+import { Link, json } from "react-router-dom"
 import { useNavigate } from "react-router"
 import Header from "../components/Header"
 import Table from "../components/Table"
@@ -22,6 +22,8 @@ import thiago from "../assets/imgs/palestrantes/thiago.jpg"
 import rogerio from "../assets/imgs/palestrantes/rogério.jpg"
 import alfredo from "../assets/imgs/palestrantes/alfredo.jpg"
 import jocimar from "../assets/imgs/palestrantes/jocimar.jpg"
+import diana from "../assets/imgs/palestrantes/diana.jpg"
+
 
 
 
@@ -312,7 +314,7 @@ export default function Main() {
                {wednesdayClicked ?
                   <DayWednesday
                      nameP=""
-                     nameC={"Diana"}
+                     nameC={"Diana Sales"}
                      titleP="wednesday"
                      descP=""
                      titleC="Frameworks de UX - Diana"
@@ -344,7 +346,7 @@ export default function Main() {
                        de dados ou vulnerabilidade.Durante a palestra os comandos serão explicados e linhas de códigos serão organizadas 
                        para realizar buscas específicas.
                      "
-                     descC=" Descrição: Você já se perguntou como criar interfaces web modernas,
+                     descC="Você já se perguntou como criar interfaces web modernas,
                      responsivas e dinâmicas? O Angular é a resposta! Junte-se a nós neste emocionante minicurso,
                      onde mergulharemos fundo no universo do desenvolvimento front-end com Angular, uma das estruturas 
                      mais poderosas e amplamente adotadas para a criação de aplicativos web."
@@ -359,6 +361,8 @@ export default function Main() {
                   <div className="photo" ><img alt="alf" src={rodolfo} /> <span>Rodolfo</span> </div>
                   <div className="photo" > <img alt="alf" src={rogerio} /> <span>Rogério Atem</span> </div>
                   <div className="photo" > <img alt="alf" src={jocimar} /> <span>Jocimar</span> </div>
+                  <div className="photo" > <img alt="alf" src={diana} /> <span>Diana</span> </div>
+
 
 
 
@@ -375,7 +379,7 @@ export default function Main() {
                   <span> E siga nossas redes sociais</span>
                   <p className="contato-info" ><ion-icon name="logo-whatsapp"></ion-icon> 22 99927-9652 </p>
                   <p className="contato-info" ><ion-icon name="logo-whatsapp"></ion-icon> 22 99927-9652 </p>
-                  <p className="contato-info" > <ion-icon name="logo-instagram"></ion-icon>https://www.instagram.com/sctiuenf/ </p>
+                  <p className="contato-info" > <ion-icon name="logo-instagram"></ion-icon> <Link to={"https://www.instagram.com/sctiuenf/"} >  https://www.instagram.com/sctiuenf/ </Link> </p>
                   <p className="contato-info" ><ion-icon name="mail-outline"></ion-icon> sctiuenf@gmail.com</p>
                </div>
             </div>

@@ -18,16 +18,37 @@ export default function UserLogged() {
    const URL_GET_EVENTOS = "https://scti-back-teste-production-3e0d.up.railway.app/events-get-segunda"
    //const URL_GET_EVENTOS_TERCA = "https://scti-back-teste-production-3e0d.up.railway.app/events-get-terca"
    const URL_GET_EVENTOS_TERCA = "http://localhost:4000/events-get-terca"
+   // const URL_GET_EVENTOS_QUARTA = "http://localhost:4000/events-get-quarta"
+   const URL_GET_EVENTOS_QUARTA = "http://localhost:4000/events-get-quarta"
+   const URL_GET_EVENTOS_QUINTA = "http://localhost:4000/events-get-quinta"
+   //const URL_GET_EVENTOS_QUINTA = "http://localhost:4000/events-get-quinta"
+   const URL_GET_EVENTOS_SEXTA = "http://localhost:4000/events-get-sexta"
+   // const URL_GET_EVENTOS_SEXTA = "http://localhost:4000/events-get-sexta"
    const [segunda, setSegunda] = useState([])
    const [terca, setTerca] = useState([])
+   const [quarta, setQuarta] = useState([])
+   const [quinta, setQuinta] = useState([])
+   const [sexta, setSexta] = useState([])
+
    const [participantInfo, setParticipantInfo] = useState([])
    const [isClicked, setIsClicked] = useState(false);
-   const [myTuesdayEvents, setMyTuesdayEvents] = useState([])
    const [myMondayEvents, setMyMondayEvents] = useState([])
+   const [myTuesdayEvents, setMyTuesdayEvents] = useState([])
+   const [myWednesdayEvents, setMyWednesdayEvents] = useState([])
+   const [myThursdayEvents, setMyThursdayEvents] = useState([])
+   const [myFridayEvents, setMyFridayEvents] = useState([])
    const myMondayCourseTime = localStorage.getItem("my-monday-courseTime")
    const myMondayCourse = localStorage.getItem("my-monday-course")
    const myTuesdayCourseTime = localStorage.getItem("my-tuesday-courseTime")
    const myTuesdayCourse = localStorage.getItem("my-tuesday-course")
+   const myThusrdaydayCourseTime = localStorage.getItem("my-thursday-courseTime")
+   const myThursdayCourse = localStorage.getItem("my-thursday-course")
+   const myWednesdayCourseTime = localStorage.getItem("my-wednesday-courseTime")
+   const myWednesdayCourse = localStorage.getItem("my-wednesday-course")
+   const myFridayCourseTime = localStorage.getItem("my-friday-courseTime")
+   const myFridyayCourse = localStorage.getItem("my-friday-course")
+
+
 
 
    function mondayBtn() {
@@ -98,6 +119,44 @@ export default function UserLogged() {
          .then((res) => {
             console.log(res.data)
             setTerca(res.data)
+
+         })
+         .catch((err) => {
+            console.log("deu erro", err.response);
+            alert("Houve um erro: " + err.response.data + " :/ ");
+         })
+   }, [])
+
+   useEffect(() => {
+      axios.get(URL_GET_EVENTOS_QUARTA)
+         .then((res) => {
+            console.log(res.data)
+            setQuarta(res.data)
+
+         })
+         .catch((err) => {
+            console.log("deu erro", err.response);
+            alert("Houve um erro: " + err.response.data + " :/ ");
+         })
+   }, [])
+
+   useEffect(() => {
+      axios.get(URL_GET_EVENTOS_QUINTA)
+         .then((res) => {
+            console.log(res.data)
+            setQuinta(res.data)
+
+         })
+         .catch((err) => {
+            console.log("deu erro", err.response);
+            alert("Houve um erro: " + err.response.data + " :/ ");
+         })
+   }, [])
+   useEffect(() => {
+      axios.get(URL_GET_EVENTOS_SEXTA)
+         .then((res) => {
+            console.log(res.data)
+            setSexta(res.data)
 
          })
          .catch((err) => {
@@ -213,18 +272,36 @@ export default function UserLogged() {
             /> : <></>}
          {wednesdayClicked ?
             <MyDayCronogram
-               title="wednesday"
-               desc=""
+               titleDay="quarta"
+               participantInfo={participantInfo}
+               setParticipantInfo={setParticipantInfo}
+               weekday={quarta}
+               isClicked={isClicked}
+               setIsClicked={setIsClicked}
+               myMondayEvents={myMondayEvents}
+               setMyWednesdayEvents={setMyWednesdayEvents}
             /> : <></>}
          {thursdayClicked ?
             <MyDayCronogram
-               title="Quinta"
-               desc=""
+               titleDay="quinta"
+               participantInfo={participantInfo}
+               setParticipantInfo={setParticipantInfo}
+               weekday={quinta}
+               isClicked={isClicked}
+               setIsClicked={setIsClicked}
+               myMondayEvents={myMondayEvents}
+               setMyThursdayEvents={setMyThursdayEvents}
             /> : <></>}
          {fridayClicked ?
             <MyDayCronogram
-               title="Sexta"
-               desc=""
+               titleDay="sexta"
+               participantInfo={participantInfo}
+               setParticipantInfo={setParticipantInfo}
+               weekday={quinta}
+               isClicked={isClicked}
+               setIsClicked={setIsClicked}
+               myMondayEvents={myMondayEvents}
+               setMyFridayEvents={setMyFridayEvents}
             /> : <></>}
 
 
@@ -256,6 +333,38 @@ export default function UserLogged() {
                   </div>
                </div>
 
+            </div>
+            <div className="line" ></div>
+            <div className="day-info" >
+               <p>Quarta  </p>
+               <span className="general-info" >{myWednesdayCourse}</span>
+               <div className="align-time" >
+                  <div className="time" >
+                     <span className="general-info" >{myWednesdayCourseTime}:00am</span>
+                  </div>
+               </div>
+
+            </div>
+            <div className="line" ></div>
+
+            <div className="day-info" >
+               <p>Quinta  </p>
+               <span className="general-info" >{myThursdayCourse}</span>
+               <div className="align-time" >
+                  <div className="time" >
+                     <span className="general-info" >{myThusrdaydayCourseTime}:00am</span>
+                  </div>
+               </div>
+            </div>
+            <div className="line" ></div>
+            <div className="day-info" >
+               <p>Sexta  </p>
+               <span className="general-info" >{myFridyayCourse}</span>
+               <div className="align-time" >
+                  <div className="time" >
+                     <span className="general-info" >{myFridayCourseTime}:00am</span>
+                  </div>
+               </div>
             </div>
             <div className="line" ></div>
          </MyBox>

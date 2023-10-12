@@ -76,6 +76,27 @@ export default function CadastrarEvento() {
                     onChange={() => handleCheckboxChange("terca")}
                 />
             </label>
+            <label> quarta
+                <input
+                    type="radio"
+                    name="opt"
+                    onChange={() => handleCheckboxChange("quarta")}
+                />
+            </label>
+            <label> quinta
+                <input
+                    type="radio"
+                    name="opt"
+                    onChange={() => handleCheckboxChange("quinta")}
+                />
+            </label>
+            <label> sexta
+                <input
+                    type="radio"
+                    name="opt"
+                    onChange={() => handleCheckboxChange("sexta")}
+                />
+            </label>
             <input
                 type="text"
                 placeholder="Nome do curso"

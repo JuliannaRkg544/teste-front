@@ -20,7 +20,7 @@ export default function DayFriday({ nameP, nameC, titleP, descP, titleC, descC }
 
             </div>
             <div className="palestras" >
-                <p className="eve-hour">  16:00pm - 18:00pm <span className="eve-title" >Thiago do Couto: </span> <span className="eve-title" > IA Desmistificada: A Ciência por Trás dos Dados
+                <p className="eve-hour">  16:00pm - 18:00pm <span className="eve-title" >Thiago do Couto </span> <span className="eve-title" > IA Desmistificada: A Ciência por Trás dos Dados
                 </span></p>
                 <div className="eve" ><p className="eve-text" > Vamos mergulhar no papel central dos dados na IA, mostrando como eles são a base de qualquer modelo de sucesso. Faremos uma análise comparativa entre a abordagem acadêmica, que enfatiza a pureza dos dados, profundidade e contexto e a metodologia científica, e o cenário de mercado, onde a velocidade, escalabilidade e a aplicação prática são fundamentais. Através desse contraste, entenderemos como a IA se adapta a diferentes contextos e necessidades.
 
@@ -61,6 +61,7 @@ flex-direction: column;
     width: 100%;
     display: flex;
     padding-right: 15px;
+    
 
 }
 
@@ -70,6 +71,8 @@ flex-direction: column;
     margin-left: 20px;
     font-weight: 600;
     font-family: 'Inconsolata', monospace;
+    display: flex;
+   
 
 
 }

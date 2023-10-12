@@ -4,7 +4,8 @@ import styled from "styled-components"
 import UserContext from "../Context/UserContext";
 import LabelOpt from "../LabelOpt";
 
-export default function DayCronogram({ titleDay, participantInfo, setParticipantInfo, weekday, isClicked, setIsClicked, myMondayEvents, setMyMondayEvents, setMyTuesdayEvents }) {
+export default function DayCronogram({ titleDay, participantInfo, setParticipantInfo, weekday,
+    isClicked, setIsClicked, setMyMondayEvents, setMyTuesdayEvents, setMyWednesdayEvents, setMyThursdayEvents, setMyFridayEvents }) {
 
     //const URL_PUT_EVENTOS = `https://scti-back-teste-production-3e0d.up.railway.app/events-alter-${titleDay}`
     const URL_PUT_EVENTOS = `http://localhost:4000/events-alter-${titleDay}`
@@ -23,6 +24,7 @@ export default function DayCronogram({ titleDay, participantInfo, setParticipant
             .then((res) => {
                 console.log(res.data)
                 setParticipantInfo(res.data)
+                console.log(weekday)
             })
             .catch((err) => console.log(err.response))
 
@@ -46,28 +48,28 @@ export default function DayCronogram({ titleDay, participantInfo, setParticipant
                     localStorage.setItem("my-tuesday-course", res.data[0].course)
                     localStorage.setItem("my-tuesday-courseTime", res.data[0].timeCourse)
                 }
+                else if (titleDay === "quarta") {
+                    setMyWednesdayEvents(res.data)
+                    localStorage.setItem("my-wednesday-course", res.data[0].course)
+                    localStorage.setItem("my-wednesday-courseTime", res.data[0].timeCourse)
+                }
+                else if (titleDay === "quinta") {
+                    setMyThursdayEvents(res.data)
+                    localStorage.setItem("my-thursday-course", res.data[0].course)
+                    localStorage.setItem("my-thursday-courseTime", res.data[0].timeCourse)
+                }
+                else if (titleDay === "sexta") {
+                    setMyFridayEvents(res.data)
+                    localStorage.setItem("my-friday-course", res.data[0].course)
+                    localStorage.setItem("my-friday-courseTime", res.data[0].timeCourse)
+                }
 
             })
             .catch((err) => console.log(err.response))
     }
 
 
-    function getParticipantEventInfoTerca(idTerca) {
-        //const URL_GET_MY_EVENTS_TERCA = `https://scti-back-teste-production-3e0d.up.railway.app/events-get-terca-user/${idTerca}`
-        const URL_GET_MY_EVENTS_TERCA = `http://localhost:4000/
-        events-get-terca-user/${idTerca}`
-        console.log(idTerca)
-        axios
-            .get(URL_GET_MY_EVENTS_TERCA)
-            .then((res) => {
-                console.log(res.data)
-                setMyTuesdayEvents(res.data)
-                localStorage.setItem("my-tuesday-course", res.data[0].course)
-                localStorage.setItem("my-tuesday-courseTime", res.data[0].timeCourse)
 
-            })
-            .catch((err) => console.log(err.response))
-    }
     function getParticipant() {
         console.log(email)
         axios
@@ -102,6 +104,19 @@ export default function DayCronogram({ titleDay, participantInfo, setParticipant
         }
         else if (titleDay === "terca") {
             idDay = participantInfo[0].idtuesday
+
+        }
+        else if (titleDay === "quarta") {
+            idDay = participantInfo[0].idwednesday
+
+
+        }
+        else if (titleDay === "quinta") {
+            idDay = participantInfo[0].idthursday
+
+        }
+        else if (titleDay === "sexta") {
+            idDay = participantInfo[0].idfriday
 
         }
         console.log("idday ", idDay)
