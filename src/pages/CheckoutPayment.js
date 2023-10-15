@@ -8,7 +8,7 @@ import styled from "styled-components";
 import Loading from "../components/Loading";
 import LoadingPage from "./MiniLoading";
 import ModalS from "./ModalS";
-import pix from "../assets/imgs/pix.jpeg"
+import pix from "../assets/imgs/qrcode.png"
 
 
 
@@ -57,7 +57,7 @@ export default function CheckoutPayment() {
             <br />
 
             {pagamento === 'boleto' ?
-              <p>boletinho</p>
+              <p>26090955146004916107220800000000395110000005500</p>
 
               : <></>}
 
@@ -85,7 +85,6 @@ p{
     font-size: 20px;
 }
 label{
-    color: green;
     line-height: 22px;
 }
 

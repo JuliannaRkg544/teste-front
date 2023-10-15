@@ -3,10 +3,9 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import styled from 'styled-components';
 
-const numero = "5522999279652";
+const numero = "5522992558278";
 
-let mensagem = `Olá, gostaria de avisar que já comprei meu ingresso
-`;
+let mensagem = `Olá, gostaria de avisar que já comprei meu ingresso!!`;
 
 
 const customStyles = {

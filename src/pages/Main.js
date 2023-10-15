@@ -23,6 +23,11 @@ import rogerio from "../assets/imgs/palestrantes/rogério.jpg"
 import alfredo from "../assets/imgs/palestrantes/alfredo.jpg"
 import jocimar from "../assets/imgs/palestrantes/jocimar.jpg"
 import diana from "../assets/imgs/palestrantes/diana.jpg"
+import vinicius from "../assets/imgs/palestrantes/vinicius.png"
+import luciano from "../assets/imgs/palestrantes/luciano.png"
+
+
+
 
 
 
@@ -283,8 +288,8 @@ export default function Main() {
                </Cronogram>
                {mondayClicked ?
                   <DayMonday
-                     nameP={"Rodolfo"}
-                     nameC={"Rodolfo"}
+                     nameP={"Rodolfo Peixoto"}
+                     nameC={"Rodolfo Peixoto"}
                      titleP="Da Universidade ao Sonho da Liderança no Mercado Livre: Minha Jornada no Mundo da Tecnologia"
                      titleC=" Introdução Rápida ao Ruby e Rails API"
                      descP="Embarque em uma viagem inspiradora através da trajetória de um profissional que transformou paixão,
@@ -304,17 +309,32 @@ export default function Main() {
                   /> : <></>}
                {tuesdayClicked ?
                   <DayTuesday
-                     nameP={"Luciano"}
-                     nameC={""}
-                     titleP="Tuesday"
-                     titleC=""
+                     nameP={""}
+                     nameC={"Luciano Rangel"}
+                     titleP="--"
+                     titleC="Utilizando Redes Neurais para auxiliar análises de exames"
                      descP=""
-                     descC=""
+                     descC="A patologia anemia apresenta um risco de aumento de morbidades
+                       e mortalidades, constituindo assim, um problema de saúde pública e que
+                       se distribui de forma ampla entre a população. Sendo assim, o presente
+                        minicurso tem como objetivo apresentar uma estratégia que consiga 
+                        realizar análises dos exames que podem detectar anemia de maneira mais 
+                        rápida e tendo possibilidade de precisão similar à que um profissional 
+                        da saúde poderia ter, para isso, serão utilizadas técnicas de 
+                        Inteligência Artificial, mais precisamente, as Redes Neurais Artificiais,
+                        que tem como objetivo aprender e modelar relações entre entradas e saídas
+                        de dados que são não-lineares e complexos; 
+                        realizar generalizações e inferências; 
+                        revelar relacionamentos, padrões e predições ocultas e modelar conjunto
+                        de dados altamente voláteis (como dados de hemogramas) e variâncias 
+                        necessárias para prever eventos raros de maneira rápida e precisa, 
+                        tendo a possibilidade de ser aperfeiçoado continuamente.
+                     "
                   /> : <></>}
                {wednesdayClicked ?
                   <DayWednesday
                      nameP=""
-                     nameC={"Diana Sales"}
+                     nameC={"Diana de Sales"}
                      titleP="wednesday"
                      descP=""
                      titleC="Frameworks de UX - Diana"
@@ -336,10 +356,10 @@ export default function Main() {
                   /> : <></>}
                {fridayClicked ?
                   <DayFriday
-                     nameP="Alfredo Junior"
+                     nameP="Alfredo Neris"
                      nameC={"Jocimar Galante"}
-                     titleP="Google Hacking
-                     "
+                     titleP="Google Hacking"
+                     titleC={" Desenvolvimento Front-end com Angular: Fundamentos e Práticas"}
                      descP=" A palestra explica conceitos básicos de Internet, o que é a técnica Google Hacking
                       e como utilizar os dorks para realizar testes de penetração. Para quem não conhece, Google Hacking é 
                       uma das formas mais simples para testar se seu site, servidor ou plataforma possui algum vazamento
@@ -356,16 +376,14 @@ export default function Main() {
             <Box>
                <p className="title" ref={palestrantesScroll} >Palestrantes</p>
                <div className="palestrantes-photos" >
-                  <div className="photo" > <img alt="alf" src={alfredo} /> <span>Alfredo</span> </div>
+                  <div className="photo" > <img alt="alf" src={alfredo} /> <span>Alfredo Neris</span> </div>
                   <div className="photo" > <img alt="alf" src={thiago} /> <span>Thiago do Couto</span> </div>
-                  <div className="photo" ><img alt="alf" src={rodolfo} /> <span>Rodolfo</span> </div>
+                  <div className="photo" ><img alt="alf" src={rodolfo} /> <span>Rodolfo Peixoto</span> </div>
                   <div className="photo" > <img alt="alf" src={rogerio} /> <span>Rogério Atem</span> </div>
-                  <div className="photo" > <img alt="alf" src={jocimar} /> <span>Jocimar</span> </div>
-                  <div className="photo" > <img alt="alf" src={diana} /> <span>Diana</span> </div>
-
-
-
-
+                  <div className="photo" > <img alt="alf" src={jocimar} /> <span>Jocimar Galante</span> </div>
+                  <div className="photo" > <img alt="alf" src={diana} /> <span>Diana de Sales</span> </div>
+                  <div className="photo" > <img alt="alf" src={luciano} /> <span>Luciano Rangel</span> </div>
+                  <div className="photo" > <img alt="alf" src={vinicius} /> <span>Vinicius</span> </div>
 
                </div>
 
@@ -377,8 +395,8 @@ export default function Main() {
                   <p className="title-end" ref={contatoScroll} >Contato</p>
                   <span>Restou alguma dúvida? Fale com a gente</span>
                   <span> E siga nossas redes sociais</span>
-                  <p className="contato-info" ><ion-icon name="logo-whatsapp"></ion-icon> 22 99927-9652 </p>
-                  <p className="contato-info" ><ion-icon name="logo-whatsapp"></ion-icon> 22 99927-9652 </p>
+                  <p className="contato-info" ><ion-icon name="logo-whatsapp"></ion-icon> 22 99927-9652 (Juliana) </p>
+                  <p className="contato-info" ><ion-icon name="logo-whatsapp"></ion-icon> 22  99255-8278 (Ricardo) </p>
                   <p className="contato-info" > <ion-icon name="logo-instagram"></ion-icon> <Link to={"https://www.instagram.com/sctiuenf/"} >  https://www.instagram.com/sctiuenf/ </Link> </p>
                   <p className="contato-info" ><ion-icon name="mail-outline"></ion-icon> sctiuenf@gmail.com</p>
                </div>

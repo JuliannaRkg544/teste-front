@@ -24,6 +24,7 @@ export default function DayTuesday({ nameP, nameC, titleP, descP, titleC, descC 
 
 
 
+
         </Style >
     )
 }
