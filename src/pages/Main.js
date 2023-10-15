@@ -333,11 +333,24 @@ export default function Main() {
                   /> : <></>}
                {wednesdayClicked ?
                   <DayWednesday
-                     nameP=""
+                     nameP="Vinicius"
                      nameC={"Diana de Sales"}
-                     titleP="wednesday"
-                     descP=""
-                     titleC="Frameworks de UX - Diana"
+                     titleP="Introdução a Computação em Nuvem na AWS"
+                     descP="A computação em nuvem representa uma revolução no 
+                     mundo da tecnologia, oferecendo flexibilidade, escalabilidade e 
+                     eficiência operacional. Ao migrar sistemas e armazenamento para a nuvem,
+                      as organizações podem reduzir significativamente seus custos 
+                      de infraestrutura, melhorar a colaboração, implementar soluções
+                     mais ágeis e inovadoras, e atender às demandas dinâmicas do mercado
+                     com rapidez. O curso oferece uma introdução na Computação em Nuvem, 
+                     com foco especial no serviço Elastic Compute Cloud (EC2) 
+                     da Amazon Web Services (AWS). Os participantes serão conduzidos
+                     por uma jornada educacional que abrange desde os conceitos fundamentais
+                     da computação em nuvem, criando e gerenciamento instâncias EC2 
+                     na plataforma AWS.
+
+                     "
+                     titleC="Frameworks de UX"
                      descC=" Frameworks ou estruturas de design de experiência ajudam a 
                      tornar seu processo mais padronizado, descomplicado e escalável.
                       Vamos realizar um mini projeto e aplicar esse conceito na prática.
@@ -346,13 +359,24 @@ export default function Main() {
                {thursdayClicked ?
                   <DayThursday
                      nameP="Rogério Atem"
-                     nameC={""}
+                     nameC={"Vinicius"}
                      titleP="O Polo de Inovação do EMBRAPII/IFFluminense"
                      descP="Negociação de Projetos, Desenvolvimento do Produto Inovador e Gestão da Propriedade Intelectual na Prática
                   Coordenador da Unidade EMBRAPII de Tecnologias para Produção Mais Limpa
                   "
-                     titleC=""
-                     descC=""
+                     titleC="Programação Distribuída com o OpenMPI
+                     "
+                     descC="Existem problemas computacionais que excedem a capacidade de 
+                     processamento dos sistemas convencionais. Esses problemas demandam um
+                      enorme poder de processamento que ultrapassa a capacidade de um único
+                       dispositivo. Desta forma, a programação distribuída e o uso de clusters 
+                       de computadores se destacam como uma solução viável. Este curso oferece 
+                       uma introdução sobre a programação distribuída, com um foco especial no 
+                       OpenMPI - um middleware amplamente reconhecido e utilizado no mercado. 
+                       O OpenMPI se destaca ao possibilitar a distribuição eficiente da carga 
+                       de processamento entre os nós de um cluster, permitindo uma execução mais
+                        rápida e eficaz das tarefas computacionais.
+                     "
                   /> : <></>}
                {fridayClicked ?
                   <DayFriday

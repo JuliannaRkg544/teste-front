@@ -14,11 +14,20 @@ export default function DayWednesday({ nameP, nameC, titleP, descP, titleC, desc
             <div className="palestras" >
                 <p className="eve-hour">  14:00pm - 16:00pm <span className="eve-title" >{nameP}: </span> <span className="eve-title" >{titleP}</span></p>
                 <div className="eve" ><p className="eve-text" > {descP}
+                    <p className="eve-flag" >Minicurso</p>
+
+                </p> </div>
+            </div>
+            <div className="palestras" >
+                <p className="eve-hour">  16:00pm - 18:00pm <span className="eve-title" >Mesa Redonda </span> <span className="eve-title" ></span></p>
+                <div className="eve" ><p className="eve-text" > Roda de conversa com veteranos do curso sobre mercado de trabalho,
+                    vida acadêmcica e outras questões relacionadas.
                     <p className="eve-flag" >Palestra</p>
 
                 </p> </div>
-
             </div>
+
+
 
 
 
