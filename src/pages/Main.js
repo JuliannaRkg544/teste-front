@@ -192,7 +192,12 @@ export default function Main() {
                      13ª Semana de Ciência da Computação e Tecnologia
                      da Informação (SCTI) - UENF
                   </p>
-                  <button className="subscription" onClick={() => navigate("/checkout")} >Realizar Inscrição</button>
+                  <div className="align-button">
+                     <button className="subscription" onClick={() => navigate("/checkout")} >Realizar Inscrição</button>
+                     <button className="subscription" onClick={() => navigate("/checkout-payment")} >Pague aqui</button>
+
+                  </div>
+
                </div>
                <p className="sub-title" >
                   <ion-icon name="calendar-outline"></ion-icon>
@@ -678,16 +683,23 @@ const Box = styled.div`
 
  }
  .subscription{
-    width: 180px;
+    width: 130px;
     height: 40px;
     background-color: #FBB040;
     border-radius: 50px;
     border-style: none;
-    margin: 0 50px;
+    margin: 10px 20px;
     color: #fff;
     font-family:'Roboto', sans-serif;
     box-shadow: 2px 2px 2px  #ccc;
     cursor: pointer;
+ }
+ .align-button{
+   margin-top: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: end;
  }
  .title{
   font-size: 34px;
