@@ -25,9 +25,9 @@ import jocimar from "../assets/imgs/palestrantes/jocimar.jpg"
 import diana from "../assets/imgs/palestrantes/diana.jpg"
 import vinicius from "../assets/imgs/palestrantes/vinicius.png"
 import luciano from "../assets/imgs/palestrantes/luciano.png"
-
-
-
+import camila from "../assets/imgs/palestrantes/camila.jpeg"
+import andre from "../assets/imgs/palestrantes/andre.png"
+import gustavo from "../assets/imgs/palestrantes/gustavo.jpeg"
 
 
 
@@ -314,11 +314,15 @@ export default function Main() {
                   /> : <></>}
                {tuesdayClicked ?
                   <DayTuesday
-                     nameP={""}
+                     nameP={"Gustavo Strauss"}
                      nameC={"Luciano Rangel"}
-                     titleP="--"
+                     titleP="Decifrando Padrões com Machine Learning"
                      titleC="Utilizando Redes Neurais para auxiliar análises de exames"
-                     descP=""
+                     descP="Nesta palestra, exploraremos o vasto mundo da Inteligência Artificial 
+                     e suas variadas aplicações no nosso cotidiano. Além de fornecer uma compreensão 
+                     sobre os conceitos básicos da IA e suas múltiplas facetas, a apresentação também
+                     mostrará um estudo de caso prático que foi conduzido com o uso da técnica de Machine
+                     Learning no intuito de identificar padrões de evasão em um curso de ensino superior. "
                      descC="A patologia anemia apresenta um risco de aumento de morbidades
                        e mortalidades, constituindo assim, um problema de saúde pública e que
                        se distribui de forma ampla entre a população. Sendo assim, o presente
@@ -413,6 +417,9 @@ export default function Main() {
                   <div className="photo" > <img alt="alf" src={diana} /> <span>Diana de Sales</span> </div>
                   <div className="photo" > <img alt="alf" src={luciano} /> <span>Luciano Rangel</span> </div>
                   <div className="photo" > <img alt="alf" src={vinicius} /> <span>Vinicius</span> </div>
+                  <div className="photo" > <img alt="alf" src={andre} /> <span>André Brandão</span> </div>
+                  <div className="photo" > <img alt="alf" src={camila} /> <span>Camila Martins</span> </div>
+                  <div className="photo" > <img alt="alf" src={gustavo} /> <span>Gustavo Strauss</span> </div>
 
                </div>
 

@@ -19,9 +19,29 @@ export default function DayTuesday({ nameP, nameC, titleP, descP, titleC, descC 
                 </p> </div>
 
             </div>
+            <div className="palestras" >
+                <p className="eve-hour">  16:00pm - 17:00pm <span className="eve-title" >Camila Martins: </span> <span className="eve-title" >
+                    Programação linear mista para escalonamento em Kubernetes com Facility Location Problem
 
+                </span></p>
+                <div className="eve" ><p className="eve-text" >
+                    A utilização dos recursos existentes
+                    em um cluster Kubernetes para garantir sua melhor performance e uma redução significativa de custo, realizando uma customização no kube-scheduler.
+                    <p className="eve-flag" >Palestra</p>
 
+                </p> </div>
 
+            </div>
+            <div className="palestras" >
+                <p className="eve-hour">  17:00pm - 18:00pm <span className="eve-title" >André Brandão: </span> <span className="eve-title" >Inteligência Emocional - Um Olhar Descomplicado</span></p>
+                <div className="eve" ><p className="eve-text" >
+                    Você já percebeu que a maneira como você se sente influencia totalmente na qualidade do seu dia e nas suas atitudes? Nessa palestra iremos conversar sobre como identificar e administrar
+                    nossas emoções de maneira extremamente pragmática e prática. Um assunto cada vez mais útil e necessário nos dias atuais.
+                    <p className="eve-flag" >Palestra</p>
+
+                </p> </div>
+
+            </div>
 
 
 
