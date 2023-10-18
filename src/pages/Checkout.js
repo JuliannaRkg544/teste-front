@@ -57,7 +57,7 @@ export default function Checkout() {
         <form>
           <input
             type="text"
-            placeholder="Nome"
+            placeholder="Nome Completo"
             value={name}
             onChange={(e) => setName(e.target.value)}
           ></input>
