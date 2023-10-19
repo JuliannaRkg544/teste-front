@@ -449,7 +449,7 @@ export default function UserLogged() {
             <div className="day-info" >
                <p>Terça  </p>
                {tuesdayCourse.length > 0 ?
-                  <span className="general-info" >{tuesdayCourse[0].course} maior q 0 </span>
+                  <span className="general-info" >{tuesdayCourse[0].course} </span>
 
                   : <></>}
                <div className="align-time" >
