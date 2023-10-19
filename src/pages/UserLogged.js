@@ -15,6 +15,8 @@ export default function UserLogged() {
    const [wednesdayClicked, setWednesdayClicked] = useState(false)
    const [thursdayClicked, setThursdayCliked] = useState(false)
    const [fridayClicked, setFridayCliked] = useState(false)
+   const token = localStorage.getItem("token")
+   const email = localStorage.getItem("email")
    const URL_GET_EVENTOS = "https://scti-back-teste-production-3e0d.up.railway.app/events-get-segunda"
    const URL_GET_EVENTOS_TERCA = "https://scti-back-teste-production-3e0d.up.railway.app/events-get-terca"
    //const URL_GET_EVENTOS_TERCA = "http://localhost:4000/events-get-terca"
@@ -24,6 +26,12 @@ export default function UserLogged() {
    const URL_GET_EVENTOS_QUINTA = "https://scti-back-teste-production-3e0d.up.railway.app/events-get-quinta"
    //const URL_GET_EVENTOS_SEXTA = "http://localhost:4000/events-get-sexta"
    const URL_GET_EVENTOS_SEXTA = "https://scti-back-teste-production-3e0d.up.railway.app/events-get-sexta"
+   const URL_GET_MY_EVENTOS_SEG = `https://scti-back-teste-production-3e0d.up.railway.app/evento-minha-seunda`
+   const URL_GET_MY_EVENTOS_TERCA = `https://scti-back-teste-production-3e0d.up.railway.app/evento-minha-terca`
+   const URL_GET_MY_EVENTOS_QUA = `https://scti-back-teste-production-3e0d.up.railway.app/evento-minha-quarta`
+   const URL_GET_MY_EVENTOS_QUI = `https://scti-back-teste-production-3e0d.up.railway.app/evento-minha-quinta`
+   const URL_GET_MY_EVENTOS_SEX = `https://scti-back-teste-production-3e0d.up.railway.app/evento-minha-sexta`
+
    const [segunda, setSegunda] = useState([])
    const [terca, setTerca] = useState([])
    const [quarta, setQuarta] = useState([])
@@ -40,13 +48,23 @@ export default function UserLogged() {
    const myMondayCourseTime = localStorage.getItem("my-monday-courseTime")
    const myMondayCourse = localStorage.getItem("my-monday-course")
    const myTuesdayCourseTime = localStorage.getItem("my-tuesday-courseTime")
-   const myTuesdayCourse = localStorage.getItem("my-tuesday-course")
+
+   const [tuesdayCourse, setTuesdayCourse] = useState([])
+   const [mondayCourse, setMondayCourse] = useState([])
+   const [wednesdayCourse, setWednesdayCourse] = useState([])
+   const [quintaCourse, setQuintaCourse] = useState([])
+   const [sextaCourse, setSextaCourse] = useState([])
+
+
+
+   //const myTuesdayCourse = localStorage.getItem("my-tuesday-course")
    const myThusrdaydayCourseTime = localStorage.getItem("my-thursday-courseTime")
    const myThursdayCourse = localStorage.getItem("my-thursday-course")
    const myWednesdayCourseTime = localStorage.getItem("my-wednesday-courseTime")
    const myWednesdayCourse = localStorage.getItem("my-wednesday-course")
    const myFridayCourseTime = localStorage.getItem("my-friday-courseTime")
    const myFridyayCourse = localStorage.getItem("my-friday-course")
+
 
 
 
@@ -164,6 +182,105 @@ export default function UserLogged() {
             alert("Houve um erro: " + err.response.data + " :/ ");
          })
    }, [])
+
+
+   useEffect(() => {
+      const config = {
+         headers: {
+            "Authorization": `Bearer ${token}`,
+         }
+      }
+      axios.get(URL_GET_MY_EVENTOS_TERCA, config)
+         .then((res) => {
+            console.log(res.data)
+            setTuesdayCourse(res.data)
+            console.log("teer, ", tuesdayCourse)
+
+         })
+         .catch((err) => {
+            console.log("deu erro", err.response);
+            alert("Houve um erro: " + err.response.data + " :/ ");
+         })
+   }, [participantInfo])
+
+   useEffect(() => {
+      const config = {
+         headers: {
+            "Authorization": `Bearer ${token}`,
+         }
+      }
+      axios.get(URL_GET_MY_EVENTOS_SEG, config)
+         .then((res) => {
+            console.log(res.data)
+            setMondayCourse(res.data)
+
+         })
+         .catch((err) => {
+            console.log("deu erro", err.response);
+            alert("Houve um erro: " + err.response.data + " :/ ");
+         })
+   }, [participantInfo])
+
+
+   useEffect(() => {
+      const config = {
+         headers: {
+            "Authorization": `Bearer ${token}`,
+         }
+      }
+      axios.get(URL_GET_MY_EVENTOS_QUA, config)
+         .then((res) => {
+            console.log(res.data)
+            setWednesdayCourse(res.data)
+            console.log("qua ", wednesdayCourse)
+
+         })
+         .catch((err) => {
+            console.log("deu erro", err.response);
+            alert("Houve um erro: " + err.response.data + " :/ ");
+         })
+   }, [participantInfo])
+
+
+   useEffect(() => {
+      const config = {
+         headers: {
+            "Authorization": `Bearer ${token}`,
+         }
+      }
+      axios.get(URL_GET_MY_EVENTOS_QUI, config)
+         .then((res) => {
+            console.log(res.data)
+            setQuintaCourse(res.data)
+            console.log("quint ", quintaCourse)
+
+         })
+         .catch((err) => {
+            console.log("deu erro", err.response);
+            alert("Houve um erro: " + err.response.data + " :/ ");
+         })
+   }, [participantInfo])
+
+
+   useEffect(() => {
+      const config = {
+         headers: {
+            "Authorization": `Bearer ${token}`,
+         }
+      }
+      axios.get(URL_GET_MY_EVENTOS_SEX, config)
+         .then((res) => {
+            console.log(res.data)
+            setSextaCourse(res.data)
+
+         })
+         .catch((err) => {
+            console.log("deu erro", err.response);
+            alert("Houve um erro: " + err.response.data + " :/ ");
+         })
+   }, [participantInfo])
+
+
 
    return (
       <Style  >
@@ -313,12 +430,17 @@ export default function UserLogged() {
      */}
          <h2 className="sub-title" >Meu Cronograma</h2>
          <MyBox>
+            { }
             <div className="day-info" >
                <p>Segunda  </p>
-               <span className="general-info" >{myMondayCourse}</span>
+               {mondayCourse.length > 0 ?
+                  <span className="general-info" >{mondayCourse[0].course}</span>
+
+                  :
+                  <></>}
                <div className="align-time">
                   <div className="time" >
-                     <span className="general-info" >{myMondayCourseTime}:00am</span>
+                     <span className="general-info" >09:00am</span>
                   </div>
                </div>
 
@@ -326,10 +448,13 @@ export default function UserLogged() {
             <div className="line" ></div>
             <div className="day-info" >
                <p>Terça  </p>
-               <span className="general-info" >{myTuesdayCourse}</span>
+               {tuesdayCourse.length > 0 ?
+                  <span className="general-info" >{tuesdayCourse[0].course} maior q 0 </span>
+
+                  : <></>}
                <div className="align-time" >
                   <div className="time" >
-                     <span className="general-info" >{myTuesdayCourseTime}:00am</span>
+                     <span className="general-info" >09:00am</span>
                   </div>
                </div>
 
@@ -337,10 +462,13 @@ export default function UserLogged() {
             <div className="line" ></div>
             <div className="day-info" >
                <p>Quarta  </p>
-               <span className="general-info" >{myWednesdayCourse}</span>
+               {wednesdayCourse.length > 0 ?
+                  <span className="general-info" >{wednesdayCourse[0].course}</span>
+
+                  : <></>}
                <div className="align-time" >
                   <div className="time" >
-                     <span className="general-info" >{myWednesdayCourseTime}:00am</span>
+                     <span className="general-info" >09:00am</span>
                   </div>
                </div>
 
@@ -349,20 +477,26 @@ export default function UserLogged() {
 
             <div className="day-info" >
                <p>Quinta  </p>
-               <span className="general-info" >{myThursdayCourse}</span>
+               {quintaCourse.length > 0 ?
+                  <span className="general-info" >{quintaCourse[0].course}</span>
+
+                  : <></>}
                <div className="align-time" >
                   <div className="time" >
-                     <span className="general-info" >{myThusrdaydayCourseTime}:00am</span>
+                     <span className="general-info" >09:00am</span>
                   </div>
                </div>
             </div>
             <div className="line" ></div>
             <div className="day-info" >
                <p>Sexta  </p>
-               <span className="general-info" >{myFridyayCourse}</span>
+               {sextaCourse.length > 0 ?
+                  <span className="general-info" >{sextaCourse[0].course}</span>
+
+                  : <></>}
                <div className="align-time" >
                   <div className="time" >
-                     <span className="general-info" >{myFridayCourseTime}:00am</span>
+                     <span className="general-info" >09:00am</span>
                   </div>
                </div>
             </div>
