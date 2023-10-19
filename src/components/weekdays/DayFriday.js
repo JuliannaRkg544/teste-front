@@ -12,6 +12,15 @@ export default function DayFriday({ nameP, nameC, titleP, descP, titleC, descC }
 
             </div>
             <div className="palestras" >
+                <p className="eve-hour">  09:00am - 12:00am <span className="eve-title" >Zoey Pessanha: </span> <span className="eve-title" >Construindo uma Aplicação Web mobile com Phoenix LiveView</span></p>
+                <div className="eve" ><p className="eve-text" >  Amplie sua aplicação com Phoenix Live View na SCTI UENF! Usando a API RESTful criada, vamos desenvolver uma interface móvel interativa em tempo real. Descubra a magia do Phoenix Live View, transformando dados em experiências dinâmicas para o usuário!
+
+                    <p className="eve-flag" >Minicurso</p>
+
+                </p> </div>
+
+            </div>
+            <div className="palestras" >
                 <p className="eve-hour">  14:00pm - 16:00pm <span className="eve-title" >{nameP}: </span> <span className="eve-title" >{titleP}</span></p>
                 <div className="eve" ><p className="eve-text" > {descP}
                     <p className="eve-flag" >Palestra</p>

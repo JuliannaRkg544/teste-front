@@ -12,6 +12,16 @@ export default function DayTuesday({ nameP, nameC, titleP, descP, titleC, descC 
 
             </div>
             <div className="palestras" >
+                <p className="eve-hour">  09:00am - 12:00am <span className="eve-title" >Zoey Pessanha: </span> <span className="eve-title" >Construindo uma API bancária RESTful com Elixir
+                </span></p>
+                <div className="eve" ><p className="eve-text" > Descubra como desenvolver uma API RESTful com Elixir/Phoenix na SCTI UENF! Aprenda a modelar dados, gerenciar transações bancárias e autenticação em um curso prático. Mergulhe no mundo do Elixir e explore o poder das APIs REST!
+
+                    <p className="eve-flag" >Minicurso</p>
+
+                </p> </div>
+
+            </div>
+            <div className="palestras" >
                 <p className="eve-hour">  14:00pm - 16:00pm <span className="eve-title" >{nameP}: </span> <span className="eve-title" >{titleP}</span></p>
                 <div className="eve" ><p className="eve-text" > {descP}
                     <p className="eve-flag" >Palestra</p>
