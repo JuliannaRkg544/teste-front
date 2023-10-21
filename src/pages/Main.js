@@ -421,7 +421,7 @@ export default function Main() {
                   <div className="photo" > <img alt="alf" src={camila} /> <span>Camila Martins</span> </div>
                   <div className="photo" > <img alt="alf" src={gustavo} /> <span>Gustavo Strauss</span> </div>
                   <div className="photo" > <img alt="alf" src={zoey} /> <span>Zoey Pessanha</span> </div>
-                  <div className="photo" > <img alt="alf" src={matheus} /> <span>Matheus Schulz</span> </div>
+                  <div className="photo" > <img alt="alf" src={matheus} /> <span>Mateus Schulz</span> </div>
 
                </div>
 
