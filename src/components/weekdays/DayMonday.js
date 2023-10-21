@@ -12,6 +12,23 @@ export default function DayMonday({ nameP, nameC, titleP, descP, titleC, descC }
 
             </div>
             <div className="palestras" >
+                <p className="eve-hour">  09:00am - 12:00am <span className="eve-title" >Matheus Schulz: </span> <span className="eve-title" >Desbravando a Programação Reativa com RxJS</span></p>
+                <div className="eve" ><p className="eve-text" >
+                    A Programação Reativa é um paradigma que chegou para revolucionar o mundo
+                    do desenvolvimento de software. Além de ser amplamente utilizado nos principais
+                    sites, serviços de streaming e frameworks, tornou-se um dos alicerces
+                    da revolução da Indústria 4.0. Neste minicurso, exploraremos os conceitos
+                    fundamentais por trás da Programação Reativa e do Padrão Observable,
+                    que podem ser aplicados em qualquer linguagem de programação.
+                    Prepare-se para uma jornada prática de aprendizado com RxJS, onde
+                    mergulharemos no universo da reatividade e descobriremos como aplicá-lo de
+                    maneira eficaz.
+                    <p className="eve-flag" >Minicurso</p>
+
+                </p> </div>
+
+            </div>
+            <div className="palestras" >
                 <p className="eve-hour">  14:00pm - 16:00pm <span className="eve-title" >{nameP}: </span> <span className="eve-title" >{titleP}</span></p>
                 <div className="eve" ><p className="eve-text" > {descP}
                     <p className="eve-flag" >Palestra</p>

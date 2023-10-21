@@ -29,7 +29,7 @@ import camila from "../assets/imgs/palestrantes/camila.jpeg"
 import andre from "../assets/imgs/palestrantes/andre.png"
 import gustavo from "../assets/imgs/palestrantes/gustavo.jpeg"
 import zoey from "../assets/imgs/palestrantes/zoey.jpeg"
-
+import matheus from "../assets/imgs/palestrantes/matheus.jpeg"
 
 
 export default function Main() {
@@ -421,6 +421,7 @@ export default function Main() {
                   <div className="photo" > <img alt="alf" src={camila} /> <span>Camila Martins</span> </div>
                   <div className="photo" > <img alt="alf" src={gustavo} /> <span>Gustavo Strauss</span> </div>
                   <div className="photo" > <img alt="alf" src={zoey} /> <span>Zoey Pessanha</span> </div>
+                  <div className="photo" > <img alt="alf" src={matheus} /> <span>Matheus Schulz</span> </div>
 
                </div>
 
