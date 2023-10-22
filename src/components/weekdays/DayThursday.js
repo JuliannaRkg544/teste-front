@@ -12,6 +12,20 @@ export default function DayThursday({ nameP, nameC, titleP, descP, titleC, descC
 
             </div>
             <div className="palestras" >
+                <p className="eve-hour">  09:00am - 12:00am <span className="eve-title" >Adriele e Marcelo: </span>
+                    <span className="eve-title" >Começando a desenvolver jogos usando GDevelop /Gestão do Conhecimento: oficina de construção de uma Wiki </span>
+                </p>
+                <div className="eve" ><p className="eve-text" > Neste minicurso serão apresentadas pelo casal Adriele e Marcelo dois campos de conhecimento diferentes.
+                    Na primeira parte do minicurso duplo, Marcelo ensinará  aos participantes, através do desenvolvimento prático de um jogo semelhante ao Vampire Survivors,
+                    sobre princípios de game design, lógica de programação para jogos e como fazer para dar os próximos passos no desenvolvimento de games.
+                    Adriele irá aprsentar aos participantes uma ferramenta de gestão de conteúdo onde irão aprender a hospedar e manter uma Wiki em um servidor local.
+
+                    <p className="eve-flag" >Minicurso</p>
+
+                </p> </div>
+
+            </div>
+            <div className="palestras" >
                 <p className="eve-hour">  14:00pm - 16:00pm <span className="eve-title" >{nameP}: </span> <span className="eve-title" >{titleP}</span></p>
                 <div className="eve" ><p className="eve-text" > {descP}
                     <p className="eve-flag" >Palestra</p>

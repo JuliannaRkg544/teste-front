@@ -30,6 +30,8 @@ import andre from "../assets/imgs/palestrantes/andre.png"
 import gustavo from "../assets/imgs/palestrantes/gustavo.jpeg"
 import zoey from "../assets/imgs/palestrantes/zoey.jpeg"
 import matheus from "../assets/imgs/palestrantes/matheus.jpeg"
+import adriele from "../assets/imgs/palestrantes/adriele.jpeg"
+import marcelo from "../assets/imgs/palestrantes/marcelo.jpeg"
 
 
 export default function Main() {
@@ -422,6 +424,9 @@ export default function Main() {
                   <div className="photo" > <img alt="alf" src={gustavo} /> <span>Gustavo Strauss</span> </div>
                   <div className="photo" > <img alt="alf" src={zoey} /> <span>Zoey Pessanha</span> </div>
                   <div className="photo" > <img alt="alf" src={matheus} /> <span>Mateus Schulz</span> </div>
+                  <div className="photo" > <img alt="alf" src={marcelo} /> <span>Marcelo Luís Moreira</span> </div>
+                  <div className="photo" > <img alt="alf" src={adriele} /> <span>Adriele Ribeiro</span> </div>
+
 
                </div>
 
