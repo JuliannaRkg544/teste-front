@@ -12,7 +12,7 @@ export default function DayThursday({ nameP, nameC, titleP, descP, titleC, descC
 
             </div>
             <div className="palestras" >
-                <p className="eve-hour">  09:00am - 12:00am <span className="eve-title" >Adriele e Marcelo: </span>
+                <p className="eve-hour">  09:00am - 12:30am <span className="eve-title" >Adriele e Marcelo: </span>
                     <span className="eve-title" >Começando a desenvolver jogos usando GDevelop /Gestão do Conhecimento: oficina de construção de uma Wiki </span>
                 </p>
                 <div className="eve" ><p className="eve-text" > Neste minicurso serão apresentadas pelo casal Adriele e Marcelo dois campos de conhecimento diferentes.
